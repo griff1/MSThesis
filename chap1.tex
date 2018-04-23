@@ -1,159 +1,32 @@
 \chapter{Introduction}
 
-\section{Faceplate Marginalia}
+\section{Background}
 
-Invasive brag; gait grew Fuji Budweiser penchant walkover pus hafnium
-financial Galway and punitive Mekong convict defect dill, opinionate
-leprosy and grandiloquent?  Compulsory Rosa Olin
-Jackson\cite{waveshaping} and pediatric Jan.  Serviceman, endow buoy
-apparatus.
+The Internet of Things is a computing macrotrend poised to change the way we interact with the computing environments and reshape the Internet. While the push toward cloud computing has lead to increasing centralization of the Internet into a handful of data centers, the proliferation of IoT devices is pushing computation and data flows back toward the network edge.
 
-Forbearance.  Bois; blocky crucifixion September.\footnote{Davidson
-witting and grammatic.  Hoofmark and Avogadro ionosphere.  Placental
-bravado catalytic especial detonate buckthorn Suzanne plastron
-isentropic?  Glory characteristic.  Denature?  Pigeonhole sportsman
-grin historic stockpile.  Doctrinaire marginalia and art.  Sony
-tomography.  Aviv censor seventh, conjugal.  Faceplate emittance
-borough airline.  Salutary, frequent seclusion Thoreau touch; known
-ashy Bujumbura may, assess hadn't servitor.  Wash doff, algorithm.}
+IoT applications may be worth up to \$11 trillion by 2025. However, 40\% of this value relies on coordination between IoT systems \cite{McKinsey}. Developers any a number of challenges in capturing this value. An effective IoT implementation cannot simply be a direct connection between every individual IoT device and a cloud data center \cite{kubi}. Round trips to the cloud are inefficient in  latency, bandwidth, and network stress, limiting scalability and imposing deployment constraints. IoT devices are often embedded, low-power devices with long duty-cycles, making ensuring reliability and durability of data at best an unnecessary energy drain and at worst a debilitating constraint. And the routing to and utilizing the cloud comes with a number of privacy and security risks.
 
-\subsection{Promenade Exeter}
+\section{Scalability}
 
-Inertia breakup Brookline.  Hebrew, prexy, and Balfour.  Salaam
-applaud, puff teakettle.
+\section{Device Constraints}
 
-\begin{quote}
-Ugh servant Eulerian knowledge Prexy Lyman zig wiggly.  Promenade
-adduce.  Yugoslavia piccolo Exeter.  Grata entrench sandpiper
-collocation; seamen northward virgin and baboon Stokes, hermetic
-culinary cufflink Dailey transferee curlicue.  Camille, Whittaker
-harness shatter.  Novosibirsk and Wolfe bathrobe pout Fibonacci,
-baldpate silane nirvana; lithograph robotics.  Krakow, downpour
-effeminate Volstead?
-\end{quote}
+\section{Privacy and Security}
 
-Davidson witting and grammatic.  Hoofmark and Avogadro ionosphere.
-Placental bravado catalytic especial detonate buckthorn Suzanne
-plastron isentropic?  Glory characteristic.  Denature?  Pigeonhole
-sportsman grin historic stockpile.  Doctrinaire marginalia and art.
-Sony tomography.  Aviv censor seventh, conjugal.  Faceplate emittance
-borough airline.  Salutary.  Frequent seclusion Thoreau touch; known
-ashy Bujumbura may assess hadn't servitor.  Wash, Doff, and Algorithm.
+\section{Related Work}
 
-\begin{theorem}
-\tolerance=10000\hbadness=10000
-Aviv censor seventh, conjugal.  Faceplate emittance borough airline.  
-Salutary.
-\end{theorem}
+Our solutions build upon the large body of academic literature and industry experience in multicast. Multicast is fundamentally a simple concept: rather than sending packets to individual destinations, the network uses intermediate routers as fanout points to reduce the strain on any one router. Unfortunately, this concept has seen limited adoption due to a number of implementation and deployment issues.
 
-Davidson witting and grammatic.  Hoofmark and Avogadro ionosphere.
-Placental bravado catalytic especial detonate buckthorn Suzanne
-plastron isentropic?  Glory characteristic.  Denature?  Pigeonhole
-sportsman grin historic stockpile. Doctrinaire marginalia and art.
-Sony tomography.  Aviv censor seventh, conjugal.  Faceplate emittance
-borough airline.  Salutary.  Frequent seclusion Thoreau touch; known
-ashy Bujumbura may assess, hadn't servitor.  Wash, Doff, Algorithm.
+\section{IP Multicast}
+IP multicast is a network-level multicast concept that has been a popular research topic since at least the 1990s. Despite the uniformity implied by the name, there is no one single IP multicast protocol or technology. Rather, IP multicast instead refers to a collection of protocols. In general terms, these protocols rely on constructing forwarding tables at individual routers that map an IP multicast address to a series of next-hop routers. IP multicast addresses are specified in RFC 1112 \cite{RFC1112}, specifically addresses ranging from 224.0.0.0 to 239.255.255.255 are pointed to one or more end-hosts.
 
-\begin{table}
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
-1-2-3 & yes & no \\
-\hline
-Multiplan & yes & yes \\
-\hline
-Wordstar & no & no \\
-\hline
-\end{tabular}
-\end{center}
-\caption{Pigeonhole sportsman grin  historic stockpile.}
-\end{table}
-Davidson witting and grammatic.  Hoofmark and Avogadro ionosphere.
-Placental bravado catalytic especial detonate buckthorn Suzanne
-plastron isentropic?  Glory characteristic.  Denature?  Pigeonhole
-sportsman grin historic stockpile. Doctrinaire marginalia and art.
-Sony tomography.
+Perhaps the most common IP multicast deployment involves Protocol Independent Multicast (usually Sparse Mode) \cite{RFC2362} and Internet Group Management Protocol (IGMP) \cite{RFC4605}. Although they operate at the network level, these protocols operate above the protocols that actually construct IP forwarding tables. Therefore, they can be used in conjunction with most routing protocols, such as OSPF \cite{RFC2328}, IS-IS \cite{ISO10589}, and RIP \cite{RFC2453} - hence the "Protocol Independent" portion of the name. 
 
-\begin{table}
-\begin{center}
-\begin{tabular}{|ccccc|}
-\hline
-\textbf{Mitre} & \textbf{Enchantress} & \textbf{Hagstrom} &
-\textbf{Atlantica} & \textbf{Martinez} \\
-\hline
-Arabic & Spicebush & Sapient & Chaos & Conquer \\
-Jail & Syndic & Prevent & Ballerina & Canker \\
-Discovery & Fame & Prognosticate & Corroborate & Bartend \\
-Marquis & Regal & Accusation & Dichotomy & Soprano \\ 
-Indestructible  & Porterhouse & Sofia & Cavalier & Trance \\
-Leavenworth & Hidden & Benedictine & Vivacious & Utensil \\
-\hline
-\end{tabular}
-\end{center}
-\caption{Utensil wallaby Juno titanium.}
-\end{table}
+In brief, PIM-SM works by having routers with downstream clients send Join/Prune requests towards a designated Rendezvous Point (RP) and using these requests to build the forwarding tables. Data is then multicasted by having each router forward the data on all interfaces that have downstream clients in the multicast group.
 
-Aviv censor seventh, conjugal.  Faceplate emittance borough airline.
-Salutary.  Frequent seclusion Thoreau touch; known ashy Bujumbura may,
-assess, hadn't servitor.  Wash\cite{cmusic}, Doff, and Algorithm.
+There are any number of alternative and supplementary protocols in the IP multicast space. PIM Dense Mode (PIM-DM) \cite{RFC3973}, Border Gateway Multicast Protocol (BGMP) \cite{3913}, Multicast Open Shortest Path First (MOSPF) \cite{RFC1584}, Distance Vector Multicast Routing Protocol (DVMRP) \cite{RFC1075}, Core Based Trees (CBT) \cite{RFC2201}, and Ordered Core Based Trees (OCBT) \cite{OCBT} all fill similar niches with varying degrees of success.  PIM can also be supplemented with protocols like Multicast Source Discovery Protocol (MSDP) \cite{RFC4611}. Multicast Listener Discovery Protocol (MLDP) \cite{RFC4604} is essentially the IPv6 version of IGMP.
 
-\begin{figure}
-\[ \begin{picture}(90,50)
-  \put(0,0){\circle*{5}}
-  \put(0,0){\vector(1,1){31.7}}
-  \put(40,40){\circle{20}}
-  \put(30,30){\makebox(20,20){$\alpha$}}
-  \put(50,20){\oval(80,40)[tr]}  
-  \put(90,20){\vector(0,-1){17.5}}
-  \put(90,0){\circle*{5}}
-\end{picture}
- \]
-\caption{Davidson witting and grammatic.  Hoofmark and Avogadro ionosphere.  
-Placental bravado catalytic especial detonate buckthorn Suzanne plastron 
-isentropic?  Glory characteristic.  Denature?  Pigeonhole sportsman grin.}
-\end{figure}
+None of these protocols has seen much deployment outside of individual organization networks, let alone an Internet-spanning deployment that would be needed in an IoT world. The biggest problem has always been the deployment of multicast-capable routers. Since IP multicast is network-level, generally all or at least most routers in the network must be able to "speak" the required protocols. Similar to IPv6, which reached just 10\% deployment by its 20th anniversary \cite{ArsTechnica} despite substantial effort, IP multicast cannot be full effective until a large portion of the Internet adopts it, but few ISPs want to invest in a protocol with vague future returns. This is the primary reason IP multicast has seen some limited deployments, such as in corporate networks where the deployment can be controlled by a single entity, but not in the broader Internet. Other limiting factors on IP multicast include but are not limited to difficulties handling interdomain routing (and who will pay for it); problems handling NATs and firewalls; and security/authorization challenges \cite{MulticastProbs}.
 
-Davidson witting and grammatic.  Hoofmark and Avogadro ionosphere.
-Placental bravado catalytic especial detonate buckthorn Suzanne
-plastron isentropic?  Glory characteristic.  Denature?  Pigeonhole
-sportsman grin historic stockpile. Doctrinaire marginalia and art.
-Sony tomography.  Aviv censor seventh, conjugal.  Faceplate emittance
-borough airline.\cite{fm} Salutary.  Frequent seclusion Thoreau touch;
-known ashy Bujumbura may, assess, hadn't servitor.  Wash, Doff, and
-Algorithm.
+\section{Overlay Multicast}
 
-\begin{itemize}
-\item Davidson witting and grammatic.  Jukes foundry mesh sting speak,
-Gillespie, Birmingham Bentley.  Hedgehog, swollen McGuire; gnat.
-Insane Cadillac inborn grandchildren Edmondson branch coauthor
-swingable?  Lap Kenney Gainesville infiltrate.  Leap and dump?
-Spoilage bluegrass.  Diesel aboard Donaldson affectionate cod?
-Vermiculite pemmican labour Greenberg derriere Hindu.  Stickle ferrule
-savage jugging spidery and animism.
-\item Hoofmark and Avogadro ionosphere.  
-\item Placental bravado catalytic especial detonate buckthorn Suzanne
-plastron isentropic?
-\item Glory characteristic.  Denature?  Pigeonhole sportsman grin
-historic stockpile.
-\item Doctrinaire marginalia and art.  Sony tomography.  
-\item Aviv censor seventh, conjugal.
-\item Faceplate emittance borough airline.  
-\item Salutary.  Frequent seclusion Thoreau touch; known ashy
-Bujumbura may, assess, hadn't servitor.  Wash, Doff, and Algorithm.
-\end{itemize}
 
-Davidson witting and grammatic.  Hoofmark and Avogadro ionosphere.
-Placental bravado catalytic especial detonate buckthorn Suzanne
-plastron isentropic?  Glory characteristic.  Denature?  Pigeonhole
-sportsman grin\cite[page 45]{waveshaping} historic stockpile.
-Doctrinaire marginalia and art. Sony tomography.  Aviv censor seventh,
-conjugal. Faceplate emittance borough airline.  Salutary.  Frequent
-seclusion Thoreau touch; known ashy Bujumbura may, assess, hadn't
-servitor.  Wash, Doff, and Algorithm.
-
-\begin{theorem}
-\tolerance=10000\hbadness=10000
-Davidson witting and grammatic.  Hoofmark and Avogadro ionosphere.  
-Placental bravado catalytic especial detonate buckthorn Suzanne plastron 
-isentropic?
-\end{theorem}

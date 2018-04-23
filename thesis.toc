@@ -2,15 +2,25 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Contents}{i}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Figures}{ii}
+\contentsline {chapter}{List of Figures}{iii}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Tables}{iii}
+\contentsline {chapter}{List of Tables}{iv}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {1}Introduction}{1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Faceplate Marginalia}{1}
+\contentsline {section}{\numberline {1.1}Background}{1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Promenade Exeter}{1}
+\contentsline {section}{\numberline {1.2}Scalability}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Device Constraints}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Privacy and Security}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.5}Related Work}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.6}IP Multicast}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.7}Overlay Multicast}{3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\chapternumberline {2}The Global Data Plane}{4}
 \defcounter {refsection}{0}\relax 

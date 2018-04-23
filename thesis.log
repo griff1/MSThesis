@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  14 APR 2018 21:13
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.5.23)  23 APR 2018 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -643,17 +643,7 @@ Package biblatex Info: ... file 'thesis.bbl' found.
 (./thesis.bbl)
 Package biblatex Info: Reference section=0 on input line 18.
 Package biblatex Info: Reference segment=0 on input line 18.
-
-! Undefined control sequence.
-l.38 \itsamasters
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[1
+ [1
 
 ]
 
@@ -674,72 +664,74 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 3.
 ) [1
 
-] (./thesis.lof) [2
+] [2] (./thesis.lof) [3
 
 ]
-(./thesis.lot) [3
+(./thesis.lot) [4
 
-] [4]
+] [5]
 \openout2 = `chap1.aux'.
 
  (./chap1.tex
 
-LaTeX Warning: Citation 'waveshaping' on page 1 undefined on input line 8.
+LaTeX Warning: Citation 'McKinsey' on page 1 undefined on input line 7.
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 18.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 18.
 
-Overfull \hbox (0.6237pt too wide) in paragraph at lines 35--42
-[]\TU/lmr/m/n/12 Davidson witting and grammatic. Hoofmark and Avogadro ionosphe
-re. Placental bravado
- []
+LaTeX Warning: Citation 'kubi' on page 1 undefined on input line 7.
 
 [1
 
 
 ]
-Overfull \hbox (0.6237pt too wide) in paragraph at lines 49--56
-[]\TU/lmr/m/n/12 Davidson witting and grammatic. Hoofmark and Avogadro ionosphe
-re. Placental bravado
- []
+
+LaTeX Warning: Citation 'RFC1112' on page 2 undefined on input line 20.
 
 
-Overfull \hbox (0.6237pt too wide) in paragraph at lines 71--76
-[]\TU/lmr/m/n/12 Davidson witting and grammatic. Hoofmark and Avogadro ionosphe
-re. Placental bravado
- []
+LaTeX Warning: Citation 'RFC2362' on page 2 undefined on input line 22.
 
 
-LaTeX Warning: Citation 'cmusic' on page 2 undefined on input line 98.
+LaTeX Warning: Citation 'RFC4605' on page 2 undefined on input line 22.
 
 
-Overfull \hbox (3.13063pt too wide) in paragraph at lines 96--99
-\TU/lmr/m/n/12 seclusion Thoreau touch; known ashy Bujumbura may, assess, hadn’
-t servitor. Wash[[]],
- []
+LaTeX Warning: Citation 'RFC2328' on page 2 undefined on input line 22.
 
 
-LaTeX Warning: Citation 'fm' on page 2 undefined on input line 121.
+LaTeX Warning: Citation 'ISO10589' on page 2 undefined on input line 22.
 
 
-Overfull \hbox (0.6237pt too wide) in paragraph at lines 116--124
-[]\TU/lmr/m/n/12 Davidson witting and grammatic. Hoofmark and Avogadro ionosphe
-re. Placental bravado
- []
-
-[2]
-
-LaTeX Warning: Citation 'waveshaping' on page 3 undefined on input line 148.
+LaTeX Warning: Citation 'RFC2453' on page 2 undefined on input line 22.
 
 
-Overfull \hbox (0.6237pt too wide) in paragraph at lines 145--153
-[]\TU/lmr/m/n/12 Davidson witting and grammatic. Hoofmark and Avogadro ionosphe
-re. Placental bravado
- []
+LaTeX Warning: Citation 'RFC3973' on page 2 undefined on input line 26.
 
-) [3]
+
+LaTeX Warning: Citation '3913' on page 2 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'RFC1584' on page 2 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'RFC1075' on page 2 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'RFC2201' on page 2 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'OCBT' on page 2 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'RFC4611' on page 2 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'RFC4604' on page 2 undefined on input line 26.
+
+
+LaTeX Warning: Citation 'ArsTechnica' on page 2 undefined on input line 28.
+
+
+LaTeX Warning: Citation 'MulticastProbs' on page 2 undefined on input line 28.
+
+[2]) [3]
 \openout2 = `chap2.aux'.
 
  (./chap2.tex [4
@@ -819,12 +811,12 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10513 strings out of 493005
- 173108 string characters out of 6134596
- 667142 words of memory out of 5000000
- 14384 multiletter control sequences out of 15000+600000
- 6488 words of font info for 37 fonts, out of 8000000 for 9000
+ 10498 strings out of 493005
+ 172774 string characters out of 6134596
+ 667382 words of memory out of 5000000
+ 14375 multiletter control sequences out of 15000+600000
+ 6464 words of font info for 34 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 39i,10n,30p,875b,3426s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,10n,30p,1181b,3426s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (19 pages).
+Output written on thesis.pdf (20 pages).

@@ -2143,10 +2143,24 @@
     <bcf:datasource type="file" datatype="bibtex">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">waveshaping</bcf:citekey>
-    <bcf:citekey order="2">cmusic</bcf:citekey>
-    <bcf:citekey order="3">fm</bcf:citekey>
-    <bcf:citekey order="4">waveshaping</bcf:citekey>
+    <bcf:citekey order="1">McKinsey</bcf:citekey>
+    <bcf:citekey order="2">kubi</bcf:citekey>
+    <bcf:citekey order="3">RFC1112</bcf:citekey>
+    <bcf:citekey order="4">RFC2362</bcf:citekey>
+    <bcf:citekey order="5">RFC4605</bcf:citekey>
+    <bcf:citekey order="6">RFC2328</bcf:citekey>
+    <bcf:citekey order="7">ISO10589</bcf:citekey>
+    <bcf:citekey order="8">RFC2453</bcf:citekey>
+    <bcf:citekey order="9">RFC3973</bcf:citekey>
+    <bcf:citekey order="10">3913</bcf:citekey>
+    <bcf:citekey order="11">RFC1584</bcf:citekey>
+    <bcf:citekey order="12">RFC1075</bcf:citekey>
+    <bcf:citekey order="13">RFC2201</bcf:citekey>
+    <bcf:citekey order="14">OCBT</bcf:citekey>
+    <bcf:citekey order="15">RFC4611</bcf:citekey>
+    <bcf:citekey order="16">RFC4604</bcf:citekey>
+    <bcf:citekey order="17">ArsTechnica</bcf:citekey>
+    <bcf:citekey order="18">MulticastProbs</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nty/global/" type="entry" sortscheme="nty" sortnamekeyscheme="global" labelprefix="">
   <bcf:sorting>
