@@ -1,0 +1,45 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Contents}{i}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List of Figures}{ii}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{List of Tables}{iii}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {1}Introduction}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Faceplate Marginalia}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{Promenade Exeter}{1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {2}The Global Data Plane}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Pigeonhole Buckthorn}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Pinwheel Thresh}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Laryngeal Gallon Mission}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {3}Secure Content Distribution Trees}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}Pigeonhole Buckthorn}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.2}Pinwheel Thresh}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.3}Laryngeal Gallon Mission}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {4}Reliability in SCDTs}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Pigeonhole Buckthorn}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Pinwheel Thresh}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Laryngeal Gallon Mission}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\chapternumberline {5}Wrapping Up}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Future Work \& Lessons Learned}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}SCDTs in the Global Data Plane}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Conclusion}{11}
