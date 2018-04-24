@@ -4,24 +4,14 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Bujumbura prexy wiggly.}}{4}
+\addvspace {10pt}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Aviv faceplate emmitance.}}{4}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep \parsepi \topsep \topsepi \itemsep \itemsepi {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \itshape An example SCDT running over a physical network with a traffic camera publishing data. The overlay network considers only the arrow links, which represent parent-child links. Legend: large nodes are running SCDT software; small nodes are not running SCDT software; arrow lines are overlay links; dashed lines are physical links; ovals are trusted domains.}}{8}{figure.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep \parsepi \topsep \topsepi \itemsep \itemsepi {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \itshape Left: Overlay routing without forced participation, requiring unnecessary retransmission. Right: Overlay routing with forced participation. Children receive the packet faster, and the non-subscribing router handles fewer packets. Legend: light gray routers are not subscribing; dark gray routers are subscribing; solid lines are physical links; dashed lines show packet flow.}}{10}{figure.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces \relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \parsep \parsepi \topsep \topsepi \itemsep \itemsepi {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \itshape Left: A physical network with SCDT nodes running on some machines. Right: The logical tree formed from that network. Legend: blue routers are not subscribing; red routers are subscribing; solid lines are physical links; dashed lines show packet flow.}}{11}{figure.3.3}
 \defcounter {refsection}{0}\relax 
 \addvspace {10pt}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Bujumbura prexy wiggly.}}{6}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Aviv faceplate emmitance.}}{6}
-\defcounter {refsection}{0}\relax 
 \addvspace {10pt}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Bujumbura prexy wiggly.}}{8}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Aviv faceplate emmitance.}}{8}
-\defcounter {refsection}{0}\relax 
-\addvspace {10pt}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Bujumbura prexy wiggly.}}{10}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Aviv faceplate emmitance.}}{10}

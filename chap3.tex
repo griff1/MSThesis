@@ -1,66 +1,183 @@
 \chapter{Secure Content Distribution Trees}
 
-\section{Pigeonhole Buckthorn}
+\section{Architecture}
+In this section, we outline the design of SCDTs.  We make no claim that these solutions are optimal; rather, we chose these design patterns with implementation, deployment, and scalability in real-world environments in mind.
 
-Davidson witting and grammatic.  Hoofmark and Avogadro ionosphere.
-Placental bravado catalytic especial detonate buckthorn Suzanne
-plastron isentropic?  Glory characteristic.  Denature?  Pigeonhole
-sportsman grin historic stockpile. Doctrinaire marginalia and art.
-Sony tomography.
+The fundamental SCDT structure is a multicast tree constructed out of an incrementally deployable overlay network \cite{overlay} of routers and end-devices running SCDT software.  The goal of this tree is to support a publish/subscribe model with a single, mobile publisher and a large number of subscribers.  We argue for scalable tree-building mechanisms that can support reliable subscribers without bottlenecking the network.  Our reliability design is based on well-researched negative acknowledgment schemes, with some changes to improve scalability for large numbers of IoT devices.  Finally, we pay particular attention to securing SCDTs.
 
-\begin{figure}\centering
-\parbox{.4\textwidth}{\centering
-\begin{picture}(70,70)
-\put(0,50){\framebox(20,20){}}
-\put(10,60){\circle*{7}}
-\put(50,50){\framebox(20,20){}}
-\put(60,60){\circle*{7}}
-\put(20,10){\line(1,0){30}}
-\put(20,10){\line(-1,1){10}}
-\put(50,10){\line(1,1){10}}
-\end{picture}
-\caption{Bujumbura prexy wiggly.}}
-\hfill
-\parbox{.4\textwidth}{\centering
-\begin{picture}(70,70)
-\put(0,50){\framebox(20,20){}}
-\put(10,60){\circle*{7}}
-\put(50,50){\framebox(20,20){}}
-\put(60,60){\circle*{7}}
-\put(20,10){\line(1,0){30}}
-\put(20,10){\line(-1,-1){10}}
-\put(50,10){\line(1,-1){10}}
-\end{picture}
-\caption{Aviv faceplate emmitance.}}
+\begin{figure}[t]
+	\begin{center}
+		\includegraphics[scale=0.5]{network_example_2}
+	\end{center}
+	\vspace{-1.2em}
+	\caption{\small \itshape An example SCDT running over a physical network with a traffic camera publishing data.  The overlay network  considers only the arrow links, which represent parent-child links.  Legend: large nodes are running SCDT software; small nodes are not running SCDT software; arrow lines are overlay links;  dashed lines are physical links; ovals are trusted domains.}
+	\vspace{-1.5em}
+	\label{fig:architecture}
 \end{figure}
 
-Aviv censor seventh, conjugal.  Faceplate emittance borough airline.
-Salutary.  Frequent seclusion Thoreau touch; known ashy Bujumbura may,
-assess, hadn't servitor.  Wash, Doff, or Algorithm.
+\subsection{Heuristic, Adaptable Multicast}
+\label{adaptable-multicast}
 
-Denature and flaxen frightful supra sailor nondescript cheerleader
-forth least sashay falconry, sneaky foxhole wink stupefy blockage and
-sinew acyclic aurora left guardian.  Raffish daytime; fought ran and
-fallible penning.
+SCDTs rely on constructing overlay multicast trees to distribute data to
+large numbers of end-devices.  We show an example in~\autoref{fig:architecture}, a 
+``smart city"
+deployment where street cameras must coordinate with traffic lights at the same
+intersection, traffic lights of neighboring intersections, and central servers
+far away.  While~\autoref{fig:architecture} only draws a half-dozen end devices, 
+the analogy holds
+for thousands of end-devices across a smart city, including all traffic lights,
+crosswalks, and public transit systems.  Building multicast trees on top of
+overlay networks has received significant study in the past \cite{overcast,
+	scribe, pgm}.  However, these protocols often have questionable scalability, require significant work at the root of the tree, require IP multicast to be running underneath, or disregard latency or security concerns.
 
-\section{Pinwheel Thresh}
+Building optimal multicast trees would require unrealistic amounts of overhead
+at the scale we are considering.  Instead, SCDTs use heuristic methods.  We describe the characteristics necessary for an IoT
+multicast tree building protocol with some similarity to that in
+\cite{overcast}, but with several critical modifications.  Subscribers (and
+routers serving subscribers) attach to a nearby node in the SCDT and
+migrate up or down the tree to best satisfy its latency and bandwidth
+constraints.
 
-Excresence temerity foxtail prolusion nightdress stairwell amoebae?
-Pawnshop, inquisitor cornet credulous pediatric?  Conjoin.  Future
-earthmen.  Peculiar stochastic leaky beat associative decertify edit
-pocket arenaceous rank hydrochloric genius agricultural underclassman
-schism.  Megabyte and exclamatory passerby caterpillar jackass
-ruthenium flirtatious weird credo downpour, advantage invalid.
+Unlike many other solutions, we argue for a multicast model in which the
+publisher can move in the network and reattach to the SCDT in a different
+location.  There are three key benefits to this model.  First, it allows
+publishers to be  without having to regularly rebuild the entire tree.
+Second, it allows nearby nodes (e.g. those with real-time constraints) to
+receive data quickly, while still allowing more distant nodes to eventually
+receive data.  Third, in the event of a break somewhere up the tree, nearby
+devices can still receive data quickly while the tree adapts.  For instance, 
+in~\autoref{fig:architecture} a network fault which isolates the local 
+intersection from the rest of
+the network should not cause interrupt service at the local intersection; instead, while
+it may reduce the effectiveness of nearby intersections which are no longer
+receiving the data, the local system can continue to function.
 
-\section{Laryngeal Gallon Mission}
+We also argue for a publisher/subscriber model in which there is only one
+publisher and arbitrarily many subscribers. This greatly simplifies tree
+construction and makes it easier to implement a mobile publisher.
 
-Conformance and pave.  Industrial compline dunk transept edifice
-downstairs.  Sextillion.  Canvas?  Lyricism webbing insurgent
-anthracnose treat familiar.  Apocalyptic quasar; ephemerides
-circumstantial.
+End-devices themselves are not the true leaves of the SCDT.  Rather, the routers
+these devices connect to should be considered the leaves of the SCDT.  Since
+routers are often plugged-in and wired-in, this change in structure allows SCDTs
+to impose some processing load on the leaves without compromising low-power or
+low-resource devices.  The leaves can determine for themselves when and how
+their heterogeneous end-devices should receive data.
 
-Peridotite giblet knot.  Navigable aver whee sheath bedraggle twill
-era scourge insert.  Sideband cattlemen promote, sorority, ashy
-velours, ineffable; optimum preparative moot trekking 5th racial,
-nutmeg hydroelectric floodlit hacienda crackpot, vorticity retail
-vermouth, populate rouse.  Ceremony?  Fungoid.
+Latency should not be disregarded.  Network operators should be able to tune
+their devices for a worst case latency before
+optimizing for bandwidth.  Latency may even be a more important factor than
+bandwidth when considering IoT devices which send data to subscribers relatively
+infrequently.  Rather than trying to sample bandwidth, nodes should simply
+attach to a nearby parent.  If they are unable to satisfy latency constraints or
+keep up with the data stream at their current location, they should migrate
+up/down the tree as necessary.  Such a strategy avoids prematurely optimizing
+for bandwidth in trees which are only occasionally sending data, and helps to
+avoid unnecessarily long, snaking trees.  In~\autoref{fig:architecture}, SCDTs 
+provide low latency
+to the nearby traffic light which requires current data; meanwhile, devices
+further away with looser latency constraints will accrue greater bandwidth
+advantages. 
+
+Rather than considering the Internet as a more or less randomly
+distributed graph of nodes, SCDTs consider the network as a series of
+interconnected, hierarchical domains of ownership.  Domains are analogous to
+Autonomous Systems \cite{RFC1930} and in many cases network operators might
+determine domain and AS boundaries to be the same.  Border gateways of
+domains/ASes provide a natural choice for multicast points, and can help to
+service join requests and maintenance, reducing strain at higher levels of the
+SCDT.  While this might provide a single point of failure (or relatively few
+points of failure), if the border gateways of an AS fail then there is no access to the
+broader Internet anyway.  
+
+A key feature of domains is trust (or lack thereof), primarily based
+on domain ownership, so that domains can serve as the boundaries within which
+data flows relatively freely.  Organizations can then choose acceptable
+domains for their data to flow over, limiting data exposure risks.  For
+instance, in a smart-home, input device commands must be sent to devices in
+the same home, but allowing those commands to leave the smart-home risks
+leaking important information, such as when a user comes and goes.  In order to transit further, developers must either trust other domains (e.g. their ISP) or establish highly secured channels between the border gateways of trusted domains.  In many cases, ASes already fit the bill of trusted domains, so few modifications would be necessary to support SCDTs, but domains can also be much more specific, such as in the smart-home example.  
+
+\begin{figure}[t]
+	\begin{center}
+		\includegraphics[scale=0.5]{poor_routing.png}
+		\includegraphics[scale=0.5]{good_routing.png}
+	\end{center}
+	\vspace{-1.3em}
+	\caption{\small \itshape Left: Overlay routing without forced participation, requiring unnecessary retransmission.  Right: Overlay routing with forced participation.  Children receive the packet faster, and the non-subscribing router handles fewer packets.  Legend: light gray routers are not subscribing; dark gray routers are subscribing; solid lines are physical links; dashed lines show packet flow.}
+	\vspace{-1em}
+	\label{fig:overlay-tree}
+\end{figure}
+
+We argue that overlay network routers that are not themselves subscribers to the
+data on a particular SCDT should be eligible to be drafted into service to
+increase tree efficiency. ~\autoref{fig:overlay-tree} demonstrates a simple 
+scenario in which
+router promotion would improve routing efficiency.  By analyzing the way overlay
+links are constructed over the physical network, the SCDT can identify router
+promotions which would increase efficiency.  The ability to promote unknown
+routers relies on the construction of trusted domains; only routers within the
+trusted domain should be eligible for promotion.
+
+\subsection{Secure Resolution Systems}
+\label{sec-resolution-system}
+
+A key construct of the SCDT system is the Secure Resolution System (SRS)
+provided by each domain.  SRSes are roughly analogous to DNS, in that they are a
+hierarchical address resolution scheme.  A new subscriber can contact its local
+SRS for information on border routers and attachments points for the desired
+SCDT.  If the subscriber is the first in its domain, the SRS will point it to
+another SRS higher up the hierarchy.
+
+Having all subscribers join the tree by contacting the root is cumbersome and slow. However, because SCDTs involve migrating between attachment points, new subscribers could theoretically use any existing node to join the tree. The closer the initially contacted node is to the ultimate attachment point, the more quickly the SCDT will converge to an optimal placement. The SRSes provide a simple way to find good attach points while allowing local administrators to configure the joining process if necessary. For instance, the local administrator might designate a single node as the domain attach point under the assumption that the domain will always keep that node running; or the administrator could configure a dynamic response based on the knowledge the SRS has about currently active nodes in the domain.
+
+The implementation of the SRS is up to the domain administrator.  A basic version on an SRS could simply be a database on a single server that contains border router information and pointers to other SRSes up the
+hierarchy; the IP address of this server could then be hard coded into all
+devices in the domain.  A better version could be built using a Distributed Hash
+Table \cite{chord, tapestry}.
+
+\subsection{Durability and Replication}
+\label{durability-replication}
+
+While many IoT applications involve sending data for immediate consumption, it is also necessary to maintain a store of records somewhere in the network.  The reasons for supporting such replicated, durable storage are threefold.  First, end-devices which require reliable service need a final ground-truth to consult when data has already been completely purged from network caches.  This is also the case for end-devices which go down and come back up later and need to consult data long forgotten by the routing infrastructure or even the publisher itself.  Second, many users will be interested in using analytics to derive insights from historical data.  Third, some devices may only need certain pieces of data, and do not want to be fully joined to the SCDT.
+
+Ideally, the SCDT can perform double duty, transporting data to interested end-devices as well as these ground-truth durable replicas.
+
+\subsection{Mobile Writer}
+\label{mobile-writer}
+\begin{figure}[t]
+	\begin{center}
+		\includegraphics[scale=0.5]{physical_network.png}
+		\includegraphics[scale=0.5]{overlay.png}
+	\end{center}
+	\vspace{-1.3em}
+	\caption{\small \itshape Left: A physical network with SCDT nodes running on some machines.  Right: The logical tree formed from that network.  Legend: blue routers are not subscribing; red routers are subscribing; solid lines are physical links; dashed lines show packet flow.}
+	\vspace{-1em}
+	\label{fig:multicast-tree}
+\end{figure}
+We have designed SCDTs with a mobile publisher in mind. This means that a self-driving car or robot can reattach to the network elsewhere in the tree quickly. When the publisher rejoins the tree, routers can easily convert their previous parent connection to a child connection (since they're now receiving data from somewhere else). As the receivers continuously test their connections and migrate to better positions, the tree will eventually reform to a shape that better reflects the publisher's new position.
+
+\subsection{Encryption and Security}
+\label{encryption-security}
+
+Denial of service and amplification attacks are a major risk in SCDTs, since packets injected into the network will be rebroadcast.  SCDTs are named using a secure namespace that allows many different SCDTs to coexist; specifically, they are named using a cryptographic hash over the credentials of the creator of the tree, making trees attributable to owners and difficult to impersonate.  Subscribers must present a certificate to join the SCDT, which can be verified at the join point, limiting the ability of attackers to attempt to spam the tree or eavesdrop on traffic.  As discussed in~\autoref{adaptable-multicast}, we argue the use of trusted domains to restrict the open flow of data further reduces the risk of data exposure via side channel attacks.  Additionally, the publisher signs data sent to the tree; packets without a valid signature will not be forwarded.  
+
+To achieve confidentiality efficiently, we argue SCDTs should utilize broadcast encryption techniques.  Broadcast encryption \cite{broadcastenc} schemes, such as Subset Difference \cite{subset} or Layered Subset Difference \cite{lsd}, allow data to be efficiently encrypted and transmitted to a large number of receivers securely.  In addition, the publisher can quickly revoke access from misbehaving subscribers by transmitting a limited number of update messages.
+
+\section{Evaluation}
+\label{scdt-eval}
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			& \textbf{SCDT} & \textbf{Overcast} & \textbf{Scribe} \\
+			\hline
+			\textbf{Locality Metric} & Stretch & Bandwidth & Typically RTT or Hop Count \\
+			\hline
+			\textbf{Re-Optimizes Routes} & Yes & Yes & No \\
+			\hline
+			\textbf{Mobile Publisher} & Yes & No & No \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Comparison of various overlay multicast schemes.}
+\end{table}

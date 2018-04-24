@@ -1,55 +1,61 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Contents}{i}
+\contentsline {chapter}{Contents}{i}{section*.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Figures}{iii}
+\contentsline {chapter}{List of Figures}{ii}{section*.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{List of Tables}{iv}
+\contentsline {chapter}{List of Tables}{iii}{section*.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {1}Introduction}{1}
+\contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Background}{1}
+\contentsline {section}{\numberline {1.1}Background}{1}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Scalability}{1}
+\contentsline {subsection}{Latency, Bandwidth, and Scalability}{1}{section*.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Device Constraints}{1}
+\contentsline {subsection}{Device Constraints}{2}{section*.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Privacy and Security}{1}
+\contentsline {subsection}{Privacy and Security}{2}{section*.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.5}Related Work}{1}
+\contentsline {section}{\numberline {1.2}Related Work}{3}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.6}IP Multicast}{2}
+\contentsline {subsection}{IP Multicast}{3}{section*.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.7}Overlay Multicast}{3}
+\contentsline {subsection}{Overlay Multicast}{4}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {2}The Global Data Plane}{4}
+\contentsline {chapter}{\chapternumberline {2}The Global Data Plane}{6}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Pigeonhole Buckthorn}{4}
+\contentsline {section}{\numberline {2.1}GDP Architecture for the Internet of Things}{6}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Pinwheel Thresh}{4}
+\contentsline {section}{\numberline {2.2}Multicast in the GDP}{6}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Laryngeal Gallon Mission}{5}
+\contentsline {chapter}{\chapternumberline {3}Secure Content Distribution Trees}{7}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {3}Secure Content Distribution Trees}{6}
+\contentsline {section}{\numberline {3.1}Architecture}{7}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Pigeonhole Buckthorn}{6}
+\contentsline {subsection}{Heuristic, Adaptable Multicast}{7}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Pinwheel Thresh}{6}
+\contentsline {subsection}{Secure Resolution Systems}{9}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Laryngeal Gallon Mission}{7}
+\contentsline {subsection}{Durability and Replication}{10}{section*.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {4}Reliability in SCDTs}{8}
+\contentsline {subsection}{Mobile Writer}{11}{section*.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Pigeonhole Buckthorn}{8}
+\contentsline {subsection}{Encryption and Security}{11}{section*.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Pinwheel Thresh}{8}
+\contentsline {section}{\numberline {3.2}Evaluation}{12}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Laryngeal Gallon Mission}{9}
+\contentsline {chapter}{\chapternumberline {4}Reliability in SCDTs}{13}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\chapternumberline {5}Wrapping Up}{10}
+\contentsline {section}{\numberline {4.1}Cached NACK Reliability}{13}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Future Work \& Lessons Learned}{10}
+\contentsline {section}{\numberline {4.2}Evaluation}{14}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}SCDTs in the Global Data Plane}{10}
+\contentsline {subsection}{Results}{14}{section*.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Conclusion}{11}
+\contentsline {chapter}{\chapternumberline {5}Wrapping Up}{15}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}Future Work \& Lessons Learned}{15}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}SCDTs in the Global Data Plane}{15}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Conclusion}{15}{section.5.3}

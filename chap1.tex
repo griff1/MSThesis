@@ -4,29 +4,74 @@
 
 The Internet of Things is a computing macrotrend poised to change the way we interact with the computing environments and reshape the Internet. While the push toward cloud computing has lead to increasing centralization of the Internet into a handful of data centers, the proliferation of IoT devices is pushing computation and data flows back toward the network edge.
 
-IoT applications may be worth up to \$11 trillion by 2025. However, 40\% of this value relies on coordination between IoT systems \cite{McKinsey}. Developers any a number of challenges in capturing this value. An effective IoT implementation cannot simply be a direct connection between every individual IoT device and a cloud data center \cite{kubi}. Round trips to the cloud are inefficient in  latency, bandwidth, and network stress, limiting scalability and imposing deployment constraints. IoT devices are often embedded, low-power devices with long duty-cycles, making ensuring reliability and durability of data at best an unnecessary energy drain and at worst a debilitating constraint. And the routing to and utilizing the cloud comes with a number of privacy and security risks.
+IoT applications may be worth up to \$11 trillion by 2025. However, 40\% of this value relies on coordination between IoT systems \cite{McKinsey}. Developers face any a number of challenges in capturing this value. An effective IoT deployment cannot simply be a direct connection between every individual IoT device and a cloud data center \cite{kubi}. Round trips to the cloud are inefficient in  latency, bandwidth, and network stress, limiting scalability and imposing deployment constraints. IoT devices are often embedded, low-power devices with low duty-cycles, making ensuring reliability and durability of data at best an unnecessary energy drain and at worst a debilitating constraint. And the routing to and utilizing the cloud comes with a number of privacy and security risks.
 
-\section{Scalability}
+\subsection{Latency, Bandwidth, and Scalability}
+In many cases, IoT devices can only realize their potential when they are able to distribute their data to thousands or millions of subscribers efficiently. For example, a temperature sensor might need to publish current temperature readings to every HVAC system in a city, or an air quality sensor might need to send pollution warnings to citizens in a wide area. 
 
-\section{Device Constraints}
+Many IoT applications involve real-time latency constraints, which almost entirely preclude going to the cloud to access data.  A traditional option is for the device originating the record to store and retransmit it to interested nearby devices that fail to receive it.  This is a poor option given the constraints of such end-devices.  If neither the cloud nor the original device are a reasonable source of caching and retransmission, that means that responsibility must be pushed elsewhere in the network.
 
-\section{Privacy and Security}
+Since many IoT applications involve nearby devices intercommunicating, round trips to the cloud make little sense. Such a solution would place undo stress on the border gateways of the network, requiring beefy links to the Internet. This is an unnecessary expense and a serious problem for remote deployments.
+
+\subsection{Device Constraints}
+The uniformity of the phrase ``Internet of Things" obscures the massive variety of devices and software that will be deployed in the IoT, not only across manufacturers and developers but also between different versions deployed at different times.  Achieving consistent performance is difficult in the presence of such heterogeneity. Some popular controllers such as Raspberry Pi \cite{RaspberryPi} and BeagleBone \cite{BeagleBone} are powerful enough to run full desktop Linux distributions.  Others, such as Telos B \cite{Telos}, which remains popular in the wireless sensor network research community, focus on minimizing power consumption.  Even low-power motes have a variety of choices when it comes to operating systems, including TinyOS \cite{tinyos}, Contiki \cite{contiki}, and RIOT \cite{riot}.  Further, such motes may only be able to transmit occasionally due to power constraints, such as motes that use power harvesting techniques.
+
+Developers currently looking to build heterogeneous IoT systems must develop solutions that can coordinate across an ever increasing mix of hardware and software deployed in the field.  The low duty cycle of some IoT devices can make direct inter-device communication difficult.
+
+In many cases, IoT devices will also have to ensure the reliability and durability of their data. Having all data subscribers communicate directly with the publisher, such as with TCP, is essentially impossible due to inconsistent timing and a lack of sufficient processing power and bandwidth on virtually all IoT devices to service heavy traffic. 
+
+\subsection{Privacy and Security}
+Security requirements can impose significant constraints on any networking protocol for the IoT.  Many applications will require data confidentiality, necessitating that all data be encrypted.  This encryption scheme must be scalable to communication with thousands of devices.
+
+Encryption alone, however, does not preclude side-channel attacks or traffic analysis attacks.  One example might be a device that writes an encrypted ``open/close" command to a door, allowing anyone who can snoop on the encrypted traffic to determine when someone enters/exits the building without decrypting the data.  Corporations in particular frequently do not want to entrust their proprietary data to external storage or allow it to be routed outside their corporate network, even when it is encrypted.  Data regulations in some countries restrict what data can flow across international borders \cite{itif}. Even within countries, any IoT data security scheme must allow some restriction on where data is allowed to flow, or set up secure, noise-injected channels between trusted nodes.
 
 \section{Related Work}
 
-Our solutions build upon the large body of academic literature and industry experience in multicast. Multicast is fundamentally a simple concept: rather than sending packets to individual destinations, the network uses intermediate routers as fanout points to reduce the strain on any one router. Unfortunately, this concept has seen limited adoption due to a number of implementation and deployment issues.
+Our solutions build upon the large body of academic literature and industry experience in multicast. Multicast is fundamentally a simple concept: rather than sending packets to individual destinations, the network uses intermediate routers as fanout points to reduce the strain on any one router. Unfortunately, this concept has seen limited adoption due to a number of implementation and deployment issues. There are two fundamentally different category of multicast schemes: IP multicast and overlay multicast.
 
-\section{IP Multicast}
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			 & \textbf{IP Multicast} & \textbf{Overlay Multicast} \\
+			\hline
+			\textbf{Incrementally Deployable} & No & Yes \\
+			\hline
+			\textbf{Easily Support Firewalls/NATs} & No & Yes \\
+			\hline
+			\textbf{Network Stress} & Lower & Higher \\
+			\hline
+			\textbf{Average Stretch} & Lower & Higher \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Comparison of IP multicast and overlay multicast.}
+\end{table}
+
+
+\subsection{IP Multicast}
 IP multicast is a network-level multicast concept that has been a popular research topic since at least the 1990s. Despite the uniformity implied by the name, there is no one single IP multicast protocol or technology. Rather, IP multicast instead refers to a collection of protocols. In general terms, these protocols rely on constructing forwarding tables at individual routers that map an IP multicast address to a series of next-hop routers. IP multicast addresses are specified in RFC 1112 \cite{RFC1112}, specifically addresses ranging from 224.0.0.0 to 239.255.255.255 are pointed to one or more end-hosts.
 
 Perhaps the most common IP multicast deployment involves Protocol Independent Multicast (usually Sparse Mode) \cite{RFC2362} and Internet Group Management Protocol (IGMP) \cite{RFC4605}. Although they operate at the network level, these protocols operate above the protocols that actually construct IP forwarding tables. Therefore, they can be used in conjunction with most routing protocols, such as OSPF \cite{RFC2328}, IS-IS \cite{ISO10589}, and RIP \cite{RFC2453} - hence the "Protocol Independent" portion of the name. 
 
 In brief, PIM-SM works by having routers with downstream clients send Join/Prune requests towards a designated Rendezvous Point (RP) and using these requests to build the forwarding tables. Data is then multicasted by having each router forward the data on all interfaces that have downstream clients in the multicast group.
 
-There are any number of alternative and supplementary protocols in the IP multicast space. PIM Dense Mode (PIM-DM) \cite{RFC3973}, Border Gateway Multicast Protocol (BGMP) \cite{3913}, Multicast Open Shortest Path First (MOSPF) \cite{RFC1584}, Distance Vector Multicast Routing Protocol (DVMRP) \cite{RFC1075}, Core Based Trees (CBT) \cite{RFC2201}, and Ordered Core Based Trees (OCBT) \cite{OCBT} all fill similar niches with varying degrees of success.  PIM can also be supplemented with protocols like Multicast Source Discovery Protocol (MSDP) \cite{RFC4611}. Multicast Listener Discovery Protocol (MLDP) \cite{RFC4604} is essentially the IPv6 version of IGMP.
+There are any number of alternative and supplementary protocols in the IP multicast space. PIM Dense Mode (PIM-DM) \cite{RFC3973}, Border Gateway Multicast Protocol (BGMP) \cite{RFC3913}, Multicast Open Shortest Path First (MOSPF) \cite{RFC1584}, Distance Vector Multicast Routing Protocol (DVMRP) \cite{RFC1075}, Core Based Trees (CBT) \cite{RFC2201}, and Ordered Core Based Trees (OCBT) \cite{OCBT} all fill similar niches with varying degrees of success.  PIM can also be supplemented with protocols like Multicast Source Discovery Protocol (MSDP) \cite{RFC4611}. Multicast Listener Discovery Protocol (MLDP) \cite{RFC4604} is essentially the IPv6 version of IGMP.
+
+A number of reliability schemes have been implemented on top of IP multicast, and are overwhelmingly based on negative acknowledgments (NAKs). NACK-Oriented Reliable Multicast (NORM) \cite{RFC5740} handles reliability by asking receivers to send a negative acknowledgment to request retransmission when a missed packet is detected. Pragmatic General Multicast (PGM) \cite{RFC3208} also uses nacks but trades off reliability guarantees for performance. Scalable Reliable Multicast (SRM) \cite{SRM} includes stronger locality principles: receivers recover by multicasting a repair request, and the missing data is retransmitted by any host that has received the packet.  Excessive repair requests/retransmissions are suppressed using exponential backoffs.
 
 None of these protocols has seen much deployment outside of individual organization networks, let alone an Internet-spanning deployment that would be needed in an IoT world. The biggest problem has always been the deployment of multicast-capable routers. Since IP multicast is network-level, generally all or at least most routers in the network must be able to "speak" the required protocols. Similar to IPv6, which reached just 10\% deployment by its 20th anniversary \cite{ArsTechnica} despite substantial effort, IP multicast cannot be full effective until a large portion of the Internet adopts it, but few ISPs want to invest in a protocol with vague future returns. This is the primary reason IP multicast has seen some limited deployments, such as in corporate networks where the deployment can be controlled by a single entity, but not in the broader Internet. Other limiting factors on IP multicast include but are not limited to difficulties handling interdomain routing (and who will pay for it); problems handling NATs and firewalls; and security/authorization challenges \cite{MulticastProbs}.
 
-\section{Overlay Multicast}
+\subsection{Overlay Multicast}
+Overlay multicast schemes arose to mitigate some of the problems faced by IP multicast schemes. Overlay multicast utilizes the same fundamental concept as IP multicast, using intermediate routers as fanout points to improve network efficiency. As the name suggests, overlay multicast schemes operate on overlay networks \cite{overlay}; they are application-level, rather than network-level, protocols. 
+
+The biggest advantage of this approach is that it eliminates the deployment problems faced by IP multicast; "multicasts" actually take the form of a series of unicast transmissions to specific destination routers, routed over IP, which then further propagate the transmission. Therefore, a handful of hosts running overlay multicast software can be deployed and reap (some of) the benefits of multicast without having to deploy IP multicast-enabled hardware throughout the network.
+
+One of the biggest challenges with overlay multicast is that the notion of neighboring nodes is not as intuitive as it is in IP multicast. For instance, simply routing a join request towards a rendezvous point (as PIM-SM does) does not guarantee that the packet will ever encounter a router running the overlay multicast software before reading the RP, reducing such a scheme to little better than IP multicast. In addition, overlay multicast is inherently less efficient than IP multicast because overlay multicast does not fully consider the underlying network the way IP multicast can.
+
+There have been a number of influential overlay multicast implementations. Scribe \cite{scribe} builds a multicast tree on top of Pastry \cite{pastry}, a Distributed Hash Table (DHT) implementation with locality properties. By routing along Pastry towards a rendezvous point, Scribe constructs a multicast tree from the union of the routes along the DHT. Overcast \cite{overcast} takes a different approach. Joining nodes will contact the root of the overcast tree and sample the connection bandwidth. The joining node then begins a series of rounds in which it will sample the current parent node's children and attach itself to the closest child that does not significantly reduce bandwidth. Narada \cite{narada} generates a connected graph among the nodes called a mesh and constructs spanning trees from there.
+
+
+
 
 

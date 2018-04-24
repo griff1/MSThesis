@@ -4,11 +4,11 @@
   <bcf:options component="biber" type="global">
     <bcf:option type="singlevalued">
       <bcf:key>output_encoding</bcf:key>
-      <bcf:value>utf8</bcf:value>
+      <bcf:value>ascii</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>input_encoding</bcf:key>
-      <bcf:value>utf8</bcf:value>
+      <bcf:value>ascii</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>debug</bcf:key>
@@ -2145,51 +2145,52 @@
   <bcf:section number="0">
     <bcf:citekey order="1">McKinsey</bcf:citekey>
     <bcf:citekey order="2">kubi</bcf:citekey>
-    <bcf:citekey order="3">RFC1112</bcf:citekey>
-    <bcf:citekey order="4">RFC2362</bcf:citekey>
-    <bcf:citekey order="5">RFC4605</bcf:citekey>
-    <bcf:citekey order="6">RFC2328</bcf:citekey>
-    <bcf:citekey order="7">ISO10589</bcf:citekey>
-    <bcf:citekey order="8">RFC2453</bcf:citekey>
-    <bcf:citekey order="9">RFC3973</bcf:citekey>
-    <bcf:citekey order="10">3913</bcf:citekey>
-    <bcf:citekey order="11">RFC1584</bcf:citekey>
-    <bcf:citekey order="12">RFC1075</bcf:citekey>
-    <bcf:citekey order="13">RFC2201</bcf:citekey>
-    <bcf:citekey order="14">OCBT</bcf:citekey>
-    <bcf:citekey order="15">RFC4611</bcf:citekey>
-    <bcf:citekey order="16">RFC4604</bcf:citekey>
-    <bcf:citekey order="17">ArsTechnica</bcf:citekey>
-    <bcf:citekey order="18">MulticastProbs</bcf:citekey>
-  </bcf:section>
-  <bcf:sortlist section="0" name="nty/global/" type="entry" sortscheme="nty" sortnamekeyscheme="global" labelprefix="">
-  <bcf:sorting>
-    <bcf:sort order="1">
-      <bcf:sortitem order="1">presort</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="2" final="1">
-      <bcf:sortitem order="1">sortkey</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="3">
-      <bcf:sortitem order="1">sortname</bcf:sortitem>
-      <bcf:sortitem order="2">author</bcf:sortitem>
-      <bcf:sortitem order="3">editor</bcf:sortitem>
-      <bcf:sortitem order="4">translator</bcf:sortitem>
-      <bcf:sortitem order="5">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="6">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="4">
-      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="2">title</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="5">
-      <bcf:sortitem order="1">sortyear</bcf:sortitem>
-      <bcf:sortitem order="2">year</bcf:sortitem>
-    </bcf:sort>
-    <bcf:sort order="6">
-      <bcf:sortitem order="1">volume</bcf:sortitem>
-      <bcf:sortitem order="2">0</bcf:sortitem>
-    </bcf:sort>
-  </bcf:sorting>
-  </bcf:sortlist>
-</bcf:controlfile>
+    <bcf:citekey order="3">RaspberryPi</bcf:citekey>
+    <bcf:citekey order="4">BeagleBone</bcf:citekey>
+    <bcf:citekey order="5">Telos</bcf:citekey>
+    <bcf:citekey order="6">tinyos</bcf:citekey>
+    <bcf:citekey order="7">contiki</bcf:citekey>
+    <bcf:citekey order="8">riot</bcf:citekey>
+    <bcf:citekey order="9">itif</bcf:citekey>
+    <bcf:citekey order="10">RFC1112</bcf:citekey>
+    <bcf:citekey order="11">RFC2362</bcf:citekey>
+    <bcf:citekey order="12">RFC4605</bcf:citekey>
+    <bcf:citekey order="13">RFC2328</bcf:citekey>
+    <bcf:citekey order="14">ISO10589</bcf:citekey>
+    <bcf:citekey order="15">RFC2453</bcf:citekey>
+    <bcf:citekey order="16">RFC3973</bcf:citekey>
+    <bcf:citekey order="17">RFC3913</bcf:citekey>
+    <bcf:citekey order="18">RFC1584</bcf:citekey>
+    <bcf:citekey order="19">RFC1075</bcf:citekey>
+    <bcf:citekey order="20">RFC2201</bcf:citekey>
+    <bcf:citekey order="21">OCBT</bcf:citekey>
+    <bcf:citekey order="22">RFC4611</bcf:citekey>
+    <bcf:citekey order="23">RFC4604</bcf:citekey>
+    <bcf:citekey order="24">RFC5740</bcf:citekey>
+    <bcf:citekey order="25">RFC3208</bcf:citekey>
+    <bcf:citekey order="26">SRM</bcf:citekey>
+    <bcf:citekey order="27">ArsTechnica</bcf:citekey>
+    <bcf:citekey order="28">MulticastProbs</bcf:citekey>
+    <bcf:citekey order="29">overlay</bcf:citekey>
+    <bcf:citekey order="30">scribe</bcf:citekey>
+    <bcf:citekey order="31">pastry</bcf:citekey>
+    <bcf:citekey order="32">overcast</bcf:citekey>
+    <bcf:citekey order="33">narada</bcf:citekey>
+    <bcf:citekey order="34">overlay</bcf:citekey>
+    <bcf:citekey order="35">overcast</bcf:citekey>
+    <bcf:citekey order="35">scribe</bcf:citekey>
+    <bcf:citekey order="35">pgm</bcf:citekey>
+    <bcf:citekey order="36">overcast</bcf:citekey>
+    <bcf:citekey order="37">RFC1930</bcf:citekey>
+    <bcf:citekey order="38">chord</bcf:citekey>
+    <bcf:citekey order="38">tapestry</bcf:citekey>
+    <bcf:citekey order="39">broadcastenc</bcf:citekey>
+    <bcf:citekey order="40">subset</bcf:citekey>
+    <bcf:citekey order="41">lsd</bcf:citekey>
+    <bcf:citekey order="42">SRM</bcf:citekey>
+    <bcf:citekey order="42">RFC3208</bcf:citekey>
+    <bcf:citekey order="43">RFC0793</bcf:citekey>
+    <bcf:citekey order="44">SRM</bcf:citekey>
+    <bcf:citekey order="44">RFC3208</bcf:citekey>
+    <bcf:citekey order="45">ns3</bcf:citekey>
+    <bcf:citekey order="46">brite</bcf:citekey>

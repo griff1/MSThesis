@@ -452,29 +452,32 @@ The \@dissertation of {\@author}, titled {\@title}, is approved:
 
 \vfil
 {\baselineskip=36pt
-\settowidth\@tempdima{\ifdefined\@cochair Co-chair\else\@chairtitle\fi\quad}
-\hbox to\textwidth{\raise 3pt\hbox to\@tempdima{\@chairtitle\hfil}%
-  \leaders\hrule\hskip 0pt plus .75fill\qquad
-  \raise 3pt\hbox{Date}\quad \leaders\hrule\hskip 0pt plus .25fill}
-\hbox to\textwidth{\raise 3pt\hbox to\@tempdima{\ifdefined\@cochair Co-chair\fi
-    \hfil}%
-  \leaders\hrule\hskip 0pt plus .75fill\qquad
-  \raise 3pt\hbox{Date}\quad \leaders\hrule\hskip 0pt plus .25fill}
-\hbox to\textwidth{\hskip\@tempdima \leaders\hrule\hskip 0pt plus .75fill\qquad
-  \raise 3pt\hbox{Date}\quad \leaders\hrule\hskip 0pt plus .25fill}
-\ifnum \@numberofmembers > 3
-\hbox to\textwidth{\hskip\@tempdima \leaders\hrule\hskip 0pt plus .75fill\qquad
-  \raise 3pt\hbox{Date}\quad \leaders\hrule\hskip 0pt plus .25fill}
-\fi
-\ifnum \@numberofmembers > 4
-\hbox to\textwidth{\hskip\@tempdima \leaders\hrule\hskip 0pt plus .75fill\qquad
-  \raise 3pt\hbox{Date}\quad \leaders\hrule\hskip 0pt plus .25fill}
-\fi
-\ifnum \@numberofmembers > 5
-\hbox to\textwidth{\hskip\@tempdima \leaders\hrule\hskip 0pt plus .75fill\qquad
-  \raise 3pt\hbox{Date}\quad \leaders\hrule\hskip 0pt plus .25fill}
-\fi
+	\settowidth\@tempdima{\ifdefined\@cochair Co-chair\else\@chairtitle\fi\quad}
+	\hbox to\textwidth{\raise 3pt\hbox to\@tempdima{\@chairtitle\hfil}%
+		\leaders\hrule\hskip 0pt plus .75fill\qquad
+		\raise 3pt\hbox{Date}\quad \leaders\hrule\hskip 0pt plus .25fill}
+	\hbox to\textwidth{\raise 3pt\hbox to\@tempdima{\ifdefined\@cochair Co-chair\fi
+			\hfil}%
+		\leaders\hrule\hskip 0pt plus .75fill\qquad
+		\raise 3pt\hbox{Date}\quad \leaders\hrule\hskip 0pt plus .25fill}
+	\ifnum \@numberofmembers > 2
+	\hbox to\textwidth{\hskip\@tempdima \leaders\hrule\hskip 0pt plus .75fill\qquad
+		\raise 3pt\hbox{Date}\quad \leaders\hrule\hskip 0pt plus .25fill}
+	\fi
+	\ifnum \@numberofmembers > 3
+	\hbox to\textwidth{\hskip\@tempdima \leaders\hrule\hskip 0pt plus .75fill\qquad
+		\raise 3pt\hbox{Date}\quad \leaders\hrule\hskip 0pt plus .25fill}
+	\fi
+	\ifnum \@numberofmembers > 4
+	\hbox to\textwidth{\hskip\@tempdima \leaders\hrule\hskip 0pt plus .75fill\qquad
+		\raise 3pt\hbox{Date}\quad \leaders\hrule\hskip 0pt plus .25fill}
+	\fi
+	\ifnum \@numberofmembers > 5
+	\hbox to\textwidth{\hskip\@tempdima \leaders\hrule\hskip 0pt plus .75fill\qquad
+		\raise 3pt\hbox{Date}\quad \leaders\hrule\hskip 0pt plus .25fill}
+	\fi
 }
+
 \vfil
 \begin{center}
 {\fmfont University of California, {\@campus}}

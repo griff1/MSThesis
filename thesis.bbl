@@ -1,0 +1,1710 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.8 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist[entry]{nty/global/}
+    \entry{RFC3973}{report}{}
+      \name{author}{3}{}{%
+        {{hash=8dda513c29738e80eeac407632f8194e}{%
+           family={Adams},
+           familyi={A\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=efe3bce7e014c93b528d88169a61510e}{%
+           family={Nicholas},
+           familyi={N\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7d35efc145873b819d4104aba8790e46}{%
+           family={Siadak},
+           familyi={S\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{75d63501f4e10b4ad477b8615228a7c0}
+      \strng{fullhash}{75d63501f4e10b4ad477b8615228a7c0}
+      \strng{authornamehash}{75d63501f4e10b4ad477b8615228a7c0}
+      \strng{authorfullhash}{75d63501f4e10b4ad477b8615228a7c0}
+      \field{sortinit}{A}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{1}
+      \field{number}{3973}
+      \field{title}{Protocol Independent Multicast - Dense Mode (PIM-DM): Protocol Specification (Revised)}
+      \field{type}{RFC}
+      \field{year}{2005}
+    \endentry
+    \entry{RFC5740}{report}{}
+      \name{author}{4}{}{%
+        {{hash=46fbc2e6780a9676abd2b5ab9b340668}{%
+           family={Adamson},
+           familyi={A\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=177b52eefcf5a9c2cbc7954e89d2be3e}{%
+           family={Bormann},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d3e3d0774f82b38bd10d4c68793c7bbb}{%
+           family={Handley},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=e605a968a024de60641c57a226956e57}{%
+           family={Macker},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{7ee546c74f42b34f7861084aa2df7689}
+      \strng{fullhash}{56ac6002682142db5ab61d4ff9009311}
+      \strng{authornamehash}{7ee546c74f42b34f7861084aa2df7689}
+      \strng{authorfullhash}{56ac6002682142db5ab61d4ff9009311}
+      \field{sortinit}{A}
+      \field{sortinithash}{3248043b5fe8d0a34dab5ab6b8d4309b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{11}
+      \field{number}{5740}
+      \field{title}{NACK-Oriented Reliable Multicast (NORM) Transport Protocol}
+      \field{type}{RFC}
+      \field{year}{2009}
+    \endentry
+    \entry{riot}{report}{}
+      \name{author}{5}{}{%
+        {{hash=2521c9ee5da181af238890d7a86bf219}{%
+           family={Baccelli},
+           familyi={B\bibinitperiod},
+           given={Emmanuel},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a3e7f12462c046b997dc79700c5d6131}{%
+           family={Hahm},
+           familyi={H\bibinitperiod},
+           given={Oliver},
+           giveni={O\bibinitperiod}}}%
+        {{hash=5a0ee3d11f49ae53113fb1ddcf432ae2}{%
+           family={Wahlisch},
+           familyi={W\bibinitperiod},
+           given={Matthias},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5270c68edfb832e135b58c5dc5a3197c}{%
+           family={Gunes},
+           familyi={G\bibinitperiod},
+           given={Mesut},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d78b23112df3b2b8a6e3e64bf29fcaac}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{a36b7cd4cd8a19259f74ae30f28b87b4}
+      \strng{fullhash}{ff6d140f1172eee14a0f952e135e50cb}
+      \strng{authornamehash}{a36b7cd4cd8a19259f74ae30f28b87b4}
+      \strng{authorfullhash}{ff6d140f1172eee14a0f952e135e50cb}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{note}{[Research Report] RR-8176, 2012. ${$\langle$}$hal-00768685v3${$\rangle$}$}
+      \field{title}{{RIOT: One OS to Rule Them All in the IoT}}
+      \field{type}{techreport}
+      \field{year}{2012}
+    \endentry
+    \entry{RFC2201}{report}{}
+      \name{author}{1}{}{%
+        {{hash=f54ce43bb571e9271cb33e6a559249d1}{%
+           family={Ballardie},
+           familyi={B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{f54ce43bb571e9271cb33e6a559249d1}
+      \strng{fullhash}{f54ce43bb571e9271cb33e6a559249d1}
+      \strng{authornamehash}{f54ce43bb571e9271cb33e6a559249d1}
+      \strng{authorfullhash}{f54ce43bb571e9271cb33e6a559249d1}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{9}
+      \field{number}{2201}
+      \field{title}{Core Based Trees (CBT) Multicast Routing Architecture}
+      \field{type}{RFC}
+      \field{year}{1997}
+    \endentry
+    \entry{BeagleBone}{article}{}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{www.beagleboard.org/bone}}
+      \field{title}{{BeagleBone}}
+    \endentry
+    \entry{ArsTechnica}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1fb454fcea2234381d1d4578197e18a3}{%
+           family={Beijnum},
+           familyi={B\bibinitperiod},
+           given={Iljitsch\bibnamedelima Van},
+           giveni={I\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{1fb454fcea2234381d1d4578197e18a3}
+      \strng{fullhash}{1fb454fcea2234381d1d4578197e18a3}
+      \strng{authornamehash}{1fb454fcea2234381d1d4578197e18a3}
+      \strng{authorfullhash}{1fb454fcea2234381d1d4578197e18a3}
+      \field{sortinit}{B}
+      \field{sortinithash}{5f6fa000f686ee5b41be67ba6ff7962d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{1}
+      \field{note}{\url{https://arstechnica.com/information-technology/2016/01/ipv6-celebrates-its-20th-birthday-by-reaching-10-percent-deployment/}}
+      \field{title}{{IPv6 celebrates its 20th birthday by reaching 10 percent deployment}}
+      \field{year}{2016}
+    \endentry
+    \entry{scribe}{article}{}
+      \name{author}{4}{}{%
+        {{hash=7219ccffadd287f9639844df1ca4c706}{%
+           family={Castro},
+           familyi={C\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d533640890f885534973dfa263fa79ea}{%
+           family={Druschel},
+           familyi={D\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=108e90962e2751ed29eaed9813ff40b4}{%
+           family={Kermarrec},
+           familyi={K\bibinitperiod},
+           given={A.\bibnamedelimi M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=84099724d94a9a1cfa7c1b280bb5f671}{%
+           family={Rowstron},
+           familyi={R\bibinitperiod},
+           given={A.\bibnamedelimi I.\bibnamedelimi T.},
+           giveni={A\bibinitperiod\bibinitdelim I\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{24d5000d597a4734ac7bd411b412f337}
+      \strng{fullhash}{01a10c9eb942cd14ecc9875e1426f67f}
+      \strng{authornamehash}{24d5000d597a4734ac7bd411b412f337}
+      \strng{authorfullhash}{01a10c9eb942cd14ecc9875e1426f67f}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0733-8716}
+      \field{journaltitle}{IEEE Journal on Selected Areas in Communications}
+      \field{month}{10}
+      \field{number}{8}
+      \field{title}{Scribe: a large-scale and decentralized application-level multicast infrastructure}
+      \field{volume}{20}
+      \field{year}{2002}
+      \field{pages}{1489\bibrangedash 1499}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/JSAC.2002.803069
+      \endverb
+      \keyw{Internet;computer network reliability;discrete event simulation;large-scale systems;multicast communication;performance evaluation;self-adjusting systems;telecommunication network routing;transport protocols;Internet;Internet protocol multicast;Pastry;Scribe;best-effort reliability guarantees;decentralized application-level multicast infrastructure;delay;discrete event simulator;generic peer-to-peer object location;generic routing substrate;group size;link stress;locality properties;network nodes;network topology model;scalable application-level multicast infrastructure;self-organization;simulation results;Delay;IP networks;Internet;Large-scale systems;Multicast protocols;Network topology;Peer to peer computing;Robustness;Routing;Telecommunication network reliability}
+    \endentry
+    \entry{narada}{article}{}
+      \name{author}{4}{}{%
+        {{hash=e29468d3c31c1a69ad9fdb25d9a07319}{%
+           family={Chu},
+           familyi={C\bibinitperiod},
+           given={Yang-hua},
+           giveni={Y\bibinithyphendelim h\bibinitperiod}}}%
+        {{hash=41bb6c51088b60efd0a11ff8bca1c75b}{%
+           family={Rao},
+           familyi={R\bibinitperiod},
+           given={S.\bibnamedelimi G.},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=5b1e37c04abc2090f98ac34cd640d959}{%
+           family={Seshan},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0f5b8b674eea6432492c32e093925682}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{5ea61e97a42fd99d07c477227d6b0ab3}
+      \strng{fullhash}{1d26a9e4d7e79d3aacbd49481cec48e8}
+      \strng{authornamehash}{5ea61e97a42fd99d07c477227d6b0ab3}
+      \strng{authorfullhash}{1d26a9e4d7e79d3aacbd49481cec48e8}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0733-8716}
+      \field{journaltitle}{IEEE Journal on Selected Areas in Communications}
+      \field{month}{10}
+      \field{number}{8}
+      \field{title}{A case for end system multicast}
+      \field{volume}{20}
+      \field{year}{2002}
+      \field{pages}{1456\bibrangedash 1471}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1109/JSAC.2002.803066
+      \endverb
+      \keyw{Internet;computer network management;delays;multicast communication;performance evaluation;self-adjusting systems;telecommunication congestion control;telecommunication network routing;transport protocols;IP multicast;Internet experiments;Internet protocol;Narada protocol;application level performance;congestion control;distributed protocol;end system multicast;end-to-end delays;higher layer functionality;membership management;network dynamics;network management;network routers;network scalability;overlay structure;packet replication;performance penalties;protocol layer;self-organizing protocol;simulation;Computer aided software engineering;Delay;Error correction;Internetworking;Multicast protocols;Proposals;Scalability;Switches;Unicast;Web and internet services}
+    \endentry
+    \entry{itif}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3e31c11b913542795ab8c84007bd6567}{%
+           family={Cory},
+           familyi={C\bibinitperiod},
+           given={Nigel},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{3e31c11b913542795ab8c84007bd6567}
+      \strng{fullhash}{3e31c11b913542795ab8c84007bd6567}
+      \strng{authornamehash}{3e31c11b913542795ab8c84007bd6567}
+      \strng{authorfullhash}{3e31c11b913542795ab8c84007bd6567}
+      \field{sortinit}{C}
+      \field{sortinithash}{095692fd22cc3c74d7fe223d02314dbd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{https://bit.ly/2DU4D6y}}
+      \field{title}{{Cross-Border Data Flows: Where Are the Barriers, and What Do They Cost?}}
+      \field{year}{2017}
+    \endentry
+    \entry{RFC1112}{report}{}
+      \name{author}{1}{}{%
+        {{hash=f9d65bffdf666c27571132aa727182d6}{%
+           family={Deering},
+           familyi={D\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{f9d65bffdf666c27571132aa727182d6}
+      \strng{fullhash}{f9d65bffdf666c27571132aa727182d6}
+      \strng{authornamehash}{f9d65bffdf666c27571132aa727182d6}
+      \strng{authorfullhash}{f9d65bffdf666c27571132aa727182d6}
+      \field{sortinit}{D}
+      \field{sortinithash}{d10b5413de1f3d197b20897dd0d565bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{8}
+      \field{note}{\url{http://www.rfc-editor.org/rfc/rfc1112.txt}}
+      \field{number}{5}
+      \field{title}{Host extensions for IP multicasting}
+      \field{type}{STD}
+      \field{year}{1989}
+      \verb{url}
+      \verb http://www.rfc-editor.org/rfc/rfc1112.txt
+      \endverb
+    \endentry
+    \entry{MulticastProbs}{article}{}
+      \name{author}{5}{}{%
+        {{hash=468452ff2b5b189af3e120936bd990c7}{%
+           family={Diot},
+           familyi={D\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=0bd60c6f151fa41acb5ee8baf32fae6b}{%
+           family={Levine},
+           familyi={L\bibinitperiod},
+           given={B.\bibnamedelimi N.},
+           giveni={B\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=f10a4dc8e74927d2eb88d75e6d805d21}{%
+           family={Lyles},
+           familyi={L\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=de7473db75b9d63dce5d9a34bf188d59}{%
+           family={Kassem},
+           familyi={K\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=ca9d315c055e74573bb7bb4a50b9e6f4}{%
+           family={Balensiefen},
+           familyi={B\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{8506efc18279913726b9560b15594f73}
+      \strng{fullhash}{9db73cb83d2b0aafb2508a007fb13782}
+      \strng{authornamehash}{8506efc18279913726b9560b15594f73}
+      \strng{authorfullhash}{9db73cb83d2b0aafb2508a007fb13782}
+      \field{sortinit}{D}
+      \field{sortinithash}{d10b5413de1f3d197b20897dd0d565bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0890-8044}
+      \field{journaltitle}{IEEE Network}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Deployment issues for the IP multicast service and architecture}
+      \field{volume}{14}
+      \field{year}{2000}
+      \field{pages}{78\bibrangedash 88}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/65.819174
+      \endverb
+      \keyw{Internet;computer network management;multicast communication;IP multicast service;Internet;architecture;complexity;deployment issues;group communication applications;open service model;scalable point-to-multipoint delivery;Authorization;Commercialization;Data security;Failure analysis;Multicast protocols;Operating systems;Protection;Robustness;Scalability;Web and internet services}
+    \endentry
+    \entry{contiki}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=04e244fcbf7eeb5e4056480c65fdceba}{%
+           family={Dunkels},
+           familyi={D\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=188d5c4d44c104d393d41e1b27e4c943}{%
+           family={Gronvall},
+           familyi={G\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1246091df1f969a4cc82d31e3a3b115a}{%
+           family={Voigt},
+           familyi={V\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{35ebe261b36c14e7302677205dcb71cd}
+      \strng{fullhash}{35ebe261b36c14e7302677205dcb71cd}
+      \strng{authornamehash}{35ebe261b36c14e7302677205dcb71cd}
+      \strng{authorfullhash}{35ebe261b36c14e7302677205dcb71cd}
+      \field{sortinit}{D}
+      \field{sortinithash}{d10b5413de1f3d197b20897dd0d565bb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{29th Annual IEEE International Conference on Local Computer Networks}
+      \field{issn}{0742-1303}
+      \field{month}{11}
+      \field{title}{{Contiki - a lightweight and flexible operating system for tiny networked sensors}}
+      \field{year}{2004}
+      \field{pages}{455\bibrangedash 462}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/LCN.2004.38
+      \endverb
+      \keyw{data communication;multi-threading;network operating systems;operating system kernels;wireless sensor networks;Contiki;dynamic code loading;event-driven kernel;flexible operating system;lightweight operating system;preemptive multithreading;wireless sensor networks;Computer science;Kernel;Large-scale systems;Libraries;Microcontrollers;Multithreading;Operating systems;Read-write memory;Sensor systems;Wireless sensor networks}
+    \endentry
+    \entry{RFC2362}{report}{}
+      \name{author}{10}{}{%
+        {{hash=641383b6dc52b31ff7d86b3b8711e6e4}{%
+           family={Estrin},
+           familyi={E\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=a96ab1e9b819dafaa1b1e2f193aedc37}{%
+           family={Farinacci},
+           familyi={F\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=cbd2eb8d33eda84ec96ea7086a1ded45}{%
+           family={Helmy},
+           familyi={H\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=e1e253ab6aed81316f51c2840aed0de8}{%
+           family={Thaler},
+           familyi={T\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6c931d7796455058101c218802b65c9c}{%
+           family={Deering},
+           familyi={D\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d3e3d0774f82b38bd10d4c68793c7bbb}{%
+           family={Handley},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dd3615034d36b61bac14d5d06d5a070b}{%
+           family={Jacobson},
+           familyi={J\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=b10bc9d78feac7c56be82d9167275721}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bbfe84d8aa15dc84a266691b6b8c61ad}{%
+           family={Sharma},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=b582ee74b4d3e20c7010bbf4a056eb2f}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{ead7335334663e0d4f0e805e22bff9e0}
+      \strng{fullhash}{c3598df68a9588bad2e0ada1c7a0ad4c}
+      \strng{authornamehash}{ead7335334663e0d4f0e805e22bff9e0}
+      \strng{authorfullhash}{c3598df68a9588bad2e0ada1c7a0ad4c}
+      \field{sortinit}{E}
+      \field{sortinithash}{07bbd5a529b5beaa311df5be05b874bc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{6}
+      \field{number}{2362}
+      \field{title}{Protocol Independent Multicast-Sparse Mode (PIM-SM): Protocol Specification}
+      \field{type}{RFC}
+      \field{year}{1998}
+    \endentry
+    \entry{RFC4605}{report}{}
+      \name{author}{4}{}{%
+        {{hash=75686a97ebb58fd6524ae9673fd4e2b1}{%
+           family={Fenner},
+           familyi={F\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=c274760aacb541538783d3e1e886b99b}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=56ba85dd676061fe6889c6b96a6ed7e8}{%
+           family={Haberman},
+           familyi={H\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=f04609ae2ade163f27dd74abf3d53a61}{%
+           family={Sandick},
+           familyi={S\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{388b3f04e9e915331194a8fbc819ca99}
+      \strng{fullhash}{c183b41a60411f2035226a36bd4927a2}
+      \strng{authornamehash}{388b3f04e9e915331194a8fbc819ca99}
+      \strng{authorfullhash}{c183b41a60411f2035226a36bd4927a2}
+      \field{sortinit}{F}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{8}
+      \field{note}{\url{http://www.rfc-editor.org/rfc/rfc4605.txt}}
+      \field{number}{4605}
+      \field{title}{Internet Group Management Protocol (IGMP) / Multicast Listener Discovery (MLD)-Based Multicast Forwarding ("IGMP/MLD Proxying")}
+      \field{type}{RFC}
+      \field{year}{2006}
+      \verb{url}
+      \verb http://www.rfc-editor.org/rfc/rfc4605.txt
+      \endverb
+    \endentry
+    \entry{broadcastenc}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=f5bfb67a9bf9effc7ef349b81997386d}{%
+           family={Fiat},
+           familyi={F\bibinitperiod},
+           given={Amos},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c6af39e79e88306281e6e0b0ccea956c}{%
+           family={Naor},
+           familyi={N\bibinitperiod},
+           given={Moni},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=a84474e58492708f0e00883cd6894b4d}{%
+           family={Stinson},
+           familyi={S\bibinitperiod},
+           given={Douglas\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{f7e97036bf474469f9ae58c81dfe6c1f}
+      \strng{fullhash}{f7e97036bf474469f9ae58c81dfe6c1f}
+      \strng{authornamehash}{f7e97036bf474469f9ae58c81dfe6c1f}
+      \strng{authorfullhash}{f7e97036bf474469f9ae58c81dfe6c1f}
+      \strng{editornamehash}{a84474e58492708f0e00883cd6894b4d}
+      \strng{editorfullhash}{a84474e58492708f0e00883cd6894b4d}
+      \field{sortinit}{F}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We introduce new theoretical measures for the qualitative and quantitative assessment of encryption schemes designed for broadcast transmissions. The goal is to allow a central broadcast site to broadcast secure transmissions to an arbitrary set of recipients while minimizing key management related transmissions. We present several schemes that allow a center to broadcast a secret to any subset of privileged users out of a universe of size n so that coalitions of k users not in the privileged set cannot learn the secret. The most interesting scheme requires every user to store O(k log k log n) keys and the center to broadcast O(k 2 log2 k log n) messages regardless of the size of the privileged set. This scheme is resilient to any coalition of k users. We also present a scheme that is resilient with probability p against a random subset of k users. This scheme requires every user to store O(log k log(1/p)) keys and the center to broadcast O(k log2 k log(1/p)) messages.}
+      \field{booktitle}{Advances in Cryptology --- CRYPTO' 93}
+      \field{isbn}{978-3-540-48329-8}
+      \field{title}{Broadcast Encryption}
+      \field{year}{1994}
+      \field{pages}{480\bibrangedash 491}
+      \range{pages}{12}
+    \endentry
+    \entry{SRM}{article}{}
+      \name{author}{5}{}{%
+        {{hash=cd39603601710aa94c3fcef905c5f419}{%
+           family={Floyd},
+           familyi={F\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=dd3615034d36b61bac14d5d06d5a070b}{%
+           family={Jacobson},
+           familyi={J\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=e6d9f3068278c8605407b2ccee08f1a0}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={C.\bibnamedelimi G.},
+           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=911636bddd4093bec802fa84eec381be}{%
+           family={McCanne},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4f9d4d2fa5b60c96090e0f4219c11d2c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{f50fc7b6f872775aa881fbeeb77a1a33}
+      \strng{fullhash}{088b9d18952b6f90394d7fcc845286ca}
+      \strng{authornamehash}{f50fc7b6f872775aa881fbeeb77a1a33}
+      \strng{authorfullhash}{088b9d18952b6f90394d7fcc845286ca}
+      \field{sortinit}{F}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1063-6692}
+      \field{journaltitle}{IEEE/ACM Transactions on Networking}
+      \field{month}{12}
+      \field{number}{6}
+      \field{title}{A reliable multicast framework for light-weight sessions and application level framing}
+      \field{volume}{5}
+      \field{year}{1997}
+      \field{pages}{784\bibrangedash 803}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1109/90.650139
+      \endverb
+      \keyw{adaptive systems;distributed processing;network topology;telecommunication computing;telecommunication congestion control;telecommunication network reliability;transport protocols;IP multicast group delivery model;adaptive algorithm;application level framing protocol model;control parameters;distributed whiteboard application;global scale;light-weight sessions;loss recovery;performance;receiver-based reliability model;reliable multicast delivery algorithm;reliable multicast framework;scalable reliable multicast;simulation;topology;unicast communications;wb;Adaptive algorithm;Algorithm design and analysis;Analytical models;Discrete event simulation;Multicast algorithms;Multicast protocols;Prototypes;Robustness;Topology;Unicast}
+    \endentry
+    \entry{lsd}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=d0cd6a21a8af784819b6b4e1fe71490b}{%
+           family={Halevy},
+           familyi={H\bibinitperiod},
+           given={Dani},
+           giveni={D\bibinitperiod}}}%
+        {{hash=71b77dd8ab33fe646ef25cded49e9881}{%
+           family={Shamir},
+           familyi={S\bibinitperiod},
+           given={Adi},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {London, UK, UK}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{c93c0766c8699e58bfdd10cceea81b4c}
+      \strng{fullhash}{c93c0766c8699e58bfdd10cceea81b4c}
+      \strng{authornamehash}{c93c0766c8699e58bfdd10cceea81b4c}
+      \strng{authorfullhash}{c93c0766c8699e58bfdd10cceea81b4c}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 22Nd Annual International Cryptology Conference on Advances in Cryptology}
+      \field{isbn}{3-540-44050-X}
+      \field{series}{CRYPTO '02}
+      \field{title}{{The LSD Broadcast Encryption Scheme}}
+      \field{year}{2002}
+      \field{pages}{47\bibrangedash 60}
+      \range{pages}{14}
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=646767.704291
+      \endverb
+    \endentry
+    \entry{RFC4604}{report}{}
+      \name{author}{3}{}{%
+        {{hash=e4e384bb977c0996fbbef5bca9f63cbc}{%
+           family={Holbrook},
+           familyi={H\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=bf2040ebb8091121c862c6361984230f}{%
+           family={Cain},
+           familyi={C\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=56ba85dd676061fe6889c6b96a6ed7e8}{%
+           family={Haberman},
+           familyi={H\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{4774a3a3d002149c44e0c1ed0fdea08d}
+      \strng{fullhash}{4774a3a3d002149c44e0c1ed0fdea08d}
+      \strng{authornamehash}{4774a3a3d002149c44e0c1ed0fdea08d}
+      \strng{authorfullhash}{4774a3a3d002149c44e0c1ed0fdea08d}
+      \field{sortinit}{H}
+      \field{sortinithash}{2f664b453ec75da1fe3804ca92633405}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{8}
+      \field{note}{\url{http://www.rfc-editor.org/rfc/rfc4604.txt}}
+      \field{number}{4604}
+      \field{title}{Using Internet Group Management Protocol Version 3 (IGMPv3) and Multicast Listener Discovery Protocol Version 2 (MLDv2) for Source-Specific Multicast}
+      \field{type}{RFC}
+      \field{year}{2006}
+      \verb{url}
+      \verb http://www.rfc-editor.org/rfc/rfc4604.txt
+      \endverb
+    \endentry
+    \entry{ISO10589}{report}{}
+      \list{institution}{1}{%
+        {International Organization for Standardization}%
+      }
+      \list{location}{1}{%
+        {Geneva, CH}%
+      }
+      \field{sortinit}{I}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labeltitlesource}{title}
+      \field{month}{11}
+      \field{title}{{Information technology -- Telecommunications and information exchange between systems -- Intermediate System to Intermediate System intra-domain routeing information exchange protocol for use in conjunction with the protocol for providing the connectionless-mode network service (ISO 8473)}}
+      \field{type}{Standard}
+      \field{volume}{2002}
+      \field{year}{2002}
+    \endentry
+    \entry{overcast}{inproceedings}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{4}{}{%
+        {{hash=d1fa02a85e815cdb96659fb899389fd8}{%
+           family={Jannotti},
+           familyi={J\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=178e1b0c7857dcd21bf52926f05e6a73}{%
+           family={Gifford},
+           familyi={G\bibinitperiod},
+           given={David\bibnamedelima K},
+           giveni={D\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=403e8c0c727eb66ea9c9f18982b126d3}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Kirk\bibnamedelima L},
+           giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=bf47e9a89253c3f1c964e6bb221faeb1}{%
+           family={Kaashoek},
+           familyi={K\bibinitperiod},
+           given={M\bibnamedelima Frans},
+           giveni={M\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {USENIX Association}%
+      }
+      \strng{namehash}{369bcfd43bf800facc1847fd4006784b}
+      \strng{fullhash}{b489453b8992180b94227f39ddfb05b2}
+      \strng{authornamehash}{369bcfd43bf800facc1847fd4006784b}
+      \strng{authorfullhash}{b489453b8992180b94227f39ddfb05b2}
+      \field{sortinit}{J}
+      \field{sortinithash}{c86bd6cced82a15683b396c2169909ef}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 4th conference on Symposium on Operating System Design \& Implementation-Volume 4}
+      \field{title}{Overcast: reliable multicasting with on overlay network}
+      \field{year}{2000}
+      \field{pages}{14}
+      \range{pages}{1}
+    \endentry
+    \entry{tinyos}{inproceedings}{}
+      \name{author}{11}{}{%
+        {{hash=64657013bce77454fd72c592c7225abf}{%
+           family={Levis},
+           familyi={L\bibinitperiod},
+           given={Philip},
+           giveni={P\bibinitperiod}}}%
+        {{hash=8b530348ffa5a0cfb0b9827772f501e9}{%
+           family={Madden},
+           familyi={M\bibinitperiod},
+           given={Samuel},
+           giveni={S\bibinitperiod}}}%
+        {{hash=215a38998c1d3a42a8aa08b7ac0eb737}{%
+           family={Polastre},
+           familyi={P\bibinitperiod},
+           given={Joseph},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e20d7a5c454a5a2092271a59f01f9f20}{%
+           family={Szewczyk},
+           familyi={S\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=85629b4550fa61b9686d2403c0b03a6a}{%
+           family={Whitehouse},
+           familyi={W\bibinitperiod},
+           given={Kamin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=e19543e005e22afcbedfd6bad32a2653}{%
+           family={Woo},
+           familyi={W\bibinitperiod},
+           given={Alec},
+           giveni={A\bibinitperiod}}}%
+        {{hash=70b61430dd5fcb98b57d86ff8903def8}{%
+           family={Gay},
+           familyi={G\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9a07922d0ea2d52822e82b57e95a6799}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+        {{hash=076cf707817a3f8501c3ecc48b1b2268}{%
+           family={Welsh},
+           familyi={W\bibinitperiod},
+           given={Matt},
+           giveni={M\bibinitperiod}}}%
+        {{hash=781eec3551b6a48285790e48b277e991}{%
+           family={Brewer},
+           familyi={B\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=476b9e41520047f68ef13e32a0872165}{%
+           family={Culler},
+           familyi={C\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{0cdf01b366bce28aea0a75d7914ebaf5}
+      \strng{fullhash}{c433a7ba486699bc5f323fc2ae330b55}
+      \strng{authornamehash}{0cdf01b366bce28aea0a75d7914ebaf5}
+      \strng{authorfullhash}{c433a7ba486699bc5f323fc2ae330b55}
+      \field{sortinit}{L}
+      \field{sortinithash}{7bba64db83423e3c29ad597f3b682cf3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Ambient Intelligence}
+      \field{isbn}{978-3-540-23867-6}
+      \field{month}{01}
+      \field{title}{{TinyOS: An Operating System for Sensor Networks}}
+      \field{volume}{00}
+      \field{year}{2005}
+      \field{pages}{115\bibrangedash 148}
+      \range{pages}{34}
+    \endentry
+    \entry{overlay}{article}{}
+      \name{author}{5}{}{%
+        {{hash=cb74c1064021d8eceaba82c4487899ed}{%
+           family={Lua},
+           familyi={L\bibinitperiod},
+           given={Eng\bibnamedelima Keong},
+           giveni={E\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=ba519fb49cefd66d5830a04f2742bf4f}{%
+           family={Crowcroft},
+           familyi={C\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d9a3b29da5afaeb729e87532f4a84eb0}{%
+           family={Pias},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1802b23e1943a3a4faed7c8c99114420}{%
+           family={Sharma},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6e37aacd811b4a086f6febf6635057f0}{%
+           family={Lim},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{83c3e304149c99da8a9f7e1e92476b3d}
+      \strng{fullhash}{55284d4be85799fea2acac423d7a1ece}
+      \strng{authornamehash}{83c3e304149c99da8a9f7e1e92476b3d}
+      \strng{authorfullhash}{55284d4be85799fea2acac423d7a1ece}
+      \field{sortinit}{L}
+      \field{sortinithash}{7bba64db83423e3c29ad597f3b682cf3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1553-877X}
+      \field{journaltitle}{IEEE Communications Surveys Tutorials}
+      \field{month}{2}
+      \field{number}{2}
+      \field{title}{{A survey and comparison of peer-to-peer overlay network schemes}}
+      \field{volume}{7}
+      \field{year}{2005}
+      \field{pages}{72\bibrangedash 93}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1109/COMST.2005.1610546
+      \endverb
+      \keyw{Centralized control;Communication system security;Delay;IP networks;Information retrieval;Peer to peer computing;Resource management;Robustness;Routing;Scalability}
+    \endentry
+    \entry{RFC2453}{report}{}
+      \name{author}{1}{}{%
+        {{hash=93d02ccb89a405389e15ab744a9b4e75}{%
+           family={Malkin},
+           familyi={M\bibinitperiod},
+           given={Gary\bibnamedelima Scott},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{93d02ccb89a405389e15ab744a9b4e75}
+      \strng{fullhash}{93d02ccb89a405389e15ab744a9b4e75}
+      \strng{authornamehash}{93d02ccb89a405389e15ab744a9b4e75}
+      \strng{authorfullhash}{93d02ccb89a405389e15ab744a9b4e75}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{11}
+      \field{note}{\url{http://www.rfc-editor.org/rfc/rfc2453.txt}}
+      \field{number}{56}
+      \field{title}{RIP Version 2}
+      \field{type}{STD}
+      \field{year}{1998}
+      \verb{url}
+      \verb http://www.rfc-editor.org/rfc/rfc2453.txt
+      \endverb
+    \endentry
+    \entry{McKinsey}{article}{}
+      \name{author}{7}{}{%
+        {{hash=e456d570ec236cee82b8cf83a29db39f}{%
+           family={Manyika},
+           familyi={M\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=37868205eba2e1ca3059b22d6c96256f}{%
+           family={Chui},
+           familyi={C\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a33635285f718dc9311d9961b7884848}{%
+           family={Bisson},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=824c9f7f4de0930deaa6c71cea8ef1c5}{%
+           family={Woetzel},
+           familyi={W\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d889cecab96d9e28bf6a37802223cf1d}{%
+           family={Dobbs},
+           familyi={D\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=cc8c46f4ffc92504dfc851403c388c32}{%
+           family={Bughin},
+           familyi={B\bibinitperiod},
+           given={Jacques},
+           giveni={J\bibinitperiod}}}%
+        {{hash=34ebff88a0e1d26c5ba62e572c0d7ec3}{%
+           family={Aharon},
+           familyi={A\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{9ca30386cbdf0aed326348c4f1825b22}
+      \strng{fullhash}{9db6f29350512f413533c6fbc6acf3fa}
+      \strng{authornamehash}{9ca30386cbdf0aed326348c4f1825b22}
+      \strng{authorfullhash}{9db6f29350512f413533c6fbc6acf3fa}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{http://bit.ly/2gyPezB}}
+      \field{title}{{The Internet of Things: Mapping the Value Beyond the Hype}}
+      \field{year}{2015}
+    \endentry
+    \entry{RFC4611}{report}{}
+      \name{author}{3}{}{%
+        {{hash=f0bf8e2441375416192c2506727dac8d}{%
+           family={McBride},
+           familyi={M\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2941ce850f6074f47999da7f559e532e}{%
+           family={Meylor},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=52b52df5c002b682b93f9849ce014438}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{f16da8b4b20e15a7dc67717915899c1e}
+      \strng{fullhash}{f16da8b4b20e15a7dc67717915899c1e}
+      \strng{authornamehash}{f16da8b4b20e15a7dc67717915899c1e}
+      \strng{authorfullhash}{f16da8b4b20e15a7dc67717915899c1e}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{8}
+      \field{number}{121}
+      \field{title}{Multicast Source Discovery Protocol (MSDP) Deployment Scenarios}
+      \field{type}{BCP}
+      \field{year}{2006}
+    \endentry
+    \entry{brite}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=88e5cdafd6c263aee4e760014512d1b6}{%
+           family={Medina},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f6b682a3411af28a2a4fe60131f6e0d9}{%
+           family={Lakhina},
+           familyi={L\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3c647120f39b7093bf756f31fc37ea5c}{%
+           family={Matta},
+           familyi={M\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=15d0d4aa4982d66381de08a781aa2ae7}{%
+           family={Byers},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{bc61eacbe4c8f87c37e5b056f7996b1e}
+      \strng{fullhash}{d1b8daa29aa17ccb72d2e4d6faff0193}
+      \strng{authornamehash}{bc61eacbe4c8f87c37e5b056f7996b1e}
+      \strng{authorfullhash}{d1b8daa29aa17ccb72d2e4d6faff0193}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{MASCOTS 2001, Proceedings Ninth International Symposium on Modeling, Analysis and Simulation of Computer and Telecommunication Systems}
+      \field{issn}{1526-7639}
+      \field{title}{BRITE: an approach to universal topology generation}
+      \field{year}{2001}
+      \field{pages}{346\bibrangedash 353}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/MASCOT.2001.948886
+      \endverb
+      \keyw{Internet;graphical user interfaces;network topology;BRITE;Boston University Representative Internet Topology Generator;Internet;SSF simulation;hierarchical structure;inclusiveness;interoperability;large-scale structure;node degree distribution;ns simulation;otter;physical topology;representativeness;synthetic topologies;topology generation framework;universal topology generation;visualization tools;Bandwidth;Character generation;Computer science;Engineering profession;IP networks;Internet;Large-scale systems;Network topology;Protocols;Visualization}
+    \endentry
+    \entry{RFC1584}{report}{}
+      \name{author}{1}{}{%
+        {{hash=b45b5562f972cf7d58c078f355162be6}{%
+           family={Moy},
+           familyi={M\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{b45b5562f972cf7d58c078f355162be6}
+      \strng{fullhash}{b45b5562f972cf7d58c078f355162be6}
+      \strng{authornamehash}{b45b5562f972cf7d58c078f355162be6}
+      \strng{authorfullhash}{b45b5562f972cf7d58c078f355162be6}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{3}
+      \field{number}{1584}
+      \field{title}{Multicast Extensions to OSPF}
+      \field{type}{RFC}
+      \field{year}{1994}
+    \endentry
+    \entry{RFC2328}{report}{}
+      \name{author}{1}{}{%
+        {{hash=86cbc710ad9fa7ae4096b3ce8b840ac0}{%
+           family={Moy},
+           familyi={M\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{86cbc710ad9fa7ae4096b3ce8b840ac0}
+      \strng{fullhash}{86cbc710ad9fa7ae4096b3ce8b840ac0}
+      \strng{authornamehash}{86cbc710ad9fa7ae4096b3ce8b840ac0}
+      \strng{authorfullhash}{86cbc710ad9fa7ae4096b3ce8b840ac0}
+      \field{sortinit}{M}
+      \field{sortinithash}{c26a05ef03e4429073ed5c825140fac3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{4}
+      \field{note}{\url{http://www.rfc-editor.org/rfc/rfc2328.txt}}
+      \field{number}{54}
+      \field{title}{OSPF Version 2}
+      \field{type}{STD}
+      \field{year}{1998}
+      \verb{url}
+      \verb http://www.rfc-editor.org/rfc/rfc2328.txt
+      \endverb
+    \endentry
+    \entry{subset}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=44175561ef04a1d4665b7e57402a77a2}{%
+           family={Naor},
+           familyi={N\bibinitperiod},
+           given={Dalit},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c6af39e79e88306281e6e0b0ccea956c}{%
+           family={Naor},
+           familyi={N\bibinitperiod},
+           given={Moni},
+           giveni={M\bibinitperiod}}}%
+        {{hash=85027940b49786143da173bca798ee5f}{%
+           family={Lotspiech},
+           familyi={L\bibinitperiod},
+           given={Jeff},
+           giveni={J\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=4591268c67f1c3a2dddd96c8b3457967}{%
+           family={Kilian},
+           familyi={K\bibinitperiod},
+           given={Joe},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{10125f41b73ec06cfb04971340e65445}
+      \strng{fullhash}{10125f41b73ec06cfb04971340e65445}
+      \strng{authornamehash}{10125f41b73ec06cfb04971340e65445}
+      \strng{authorfullhash}{10125f41b73ec06cfb04971340e65445}
+      \strng{editornamehash}{4591268c67f1c3a2dddd96c8b3457967}
+      \strng{editorfullhash}{4591268c67f1c3a2dddd96c8b3457967}
+      \field{sortinit}{N}
+      \field{sortinithash}{1163c28585427c673ad5a010cbf82f52}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We deal with the problem of a center sending a message to a group of users such that some subset of the users is considered revoked and should not be able to obtain the content of the message. We concentrate on the stateless receiver case, where the users do not (necessarily) update their state from session to session. We present a framework called the Subset-Cover framework, which abstracts a variety of revocation schemes including some previously known ones. We provide sufficient conditions that guarantees the security of a revocation algorithm in this class.}
+      \field{booktitle}{Advances in Cryptology --- CRYPTO 2001}
+      \field{isbn}{978-3-540-44647-7}
+      \field{title}{Revocation and Tracing Schemes for Stateless Receivers}
+      \field{year}{2001}
+      \field{pages}{41\bibrangedash 62}
+      \range{pages}{22}
+    \endentry
+    \entry{ns3}{article}{}
+      \field{sortinit}{n}
+      \field{sortinithash}{1163c28585427c673ad5a010cbf82f52}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{https://www.nsnam.org/}}
+      \field{title}{{ns-3}}
+    \endentry
+    \entry{Telos}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=9b11c89d609b521690b0583ef91d91d7}{%
+           family={Polastre},
+           familyi={P\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1da1111e0cfbb5045c1a0cd7549a4cd0}{%
+           family={Szewczyk},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7cded5d7bd50a19e3580d90953fc36c3}{%
+           family={Culler},
+           familyi={C\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{fccc669c83e95ac424e7ee6c533a055c}
+      \strng{fullhash}{fccc669c83e95ac424e7ee6c533a055c}
+      \strng{authornamehash}{fccc669c83e95ac424e7ee6c533a055c}
+      \strng{authorfullhash}{fccc669c83e95ac424e7ee6c533a055c}
+      \field{sortinit}{P}
+      \field{sortinithash}{24100cef455d7974167575052c29146e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IPSN 2005. Fourth International Symposium on Information Processing in Sensor Networks, 2005.}
+      \field{month}{1}
+      \field{title}{{Telos: enabling ultra-low power wireless research}}
+      \field{year}{2005}
+      \field{pages}{364\bibrangedash 369}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IPSN.2005.1440950
+      \endverb
+      \keyw{low-power electronics;microcontrollers;wireless sensor networks;Chipcon IEEE 802.15.4-compliant radio;MSP430 microcontroller;Telos mote design;Texas Instruments;UC Berkeley;USB Telos power profile;WSN;minimal power consumption;ultra-low power wireless research;wireless sensor network;Computer science;Energy consumption;Hardware;Instruments;Magnetic sensors;Microcontrollers;Read-write memory;Robustness;Temperature sensors;Wireless sensor networks}
+    \endentry
+    \entry{RFC0793}{report}{}
+      \name{author}{1}{}{%
+        {{hash=02b8dba2b9241ee3cbe59775cce0328d}{%
+           family={Postel},
+           familyi={P\bibinitperiod},
+           given={Jon},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{02b8dba2b9241ee3cbe59775cce0328d}
+      \strng{fullhash}{02b8dba2b9241ee3cbe59775cce0328d}
+      \strng{authornamehash}{02b8dba2b9241ee3cbe59775cce0328d}
+      \strng{authorfullhash}{02b8dba2b9241ee3cbe59775cce0328d}
+      \field{sortinit}{P}
+      \field{sortinithash}{24100cef455d7974167575052c29146e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{9}
+      \field{note}{\url{http://www.rfc-editor.org/rfc/rfc793.txt}}
+      \field{number}{7}
+      \field{title}{{Transmission Control Protocol}}
+      \field{type}{STD}
+      \field{year}{1981}
+      \verb{url}
+      \verb http://www.rfc-editor.org/rfc/rfc793.txt
+      \endverb
+    \endentry
+    \entry{RaspberryPi}{article}{}
+      \field{sortinit}{R}
+      \field{sortinithash}{c15bc8eb6936bc6b3c8baa9e8575af53}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{www.raspberrypi.org}}
+      \field{title}{{Raspberry Pi}}
+    \endentry
+    \entry{pastry}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=0671e66669b3ddcdd39011be5b4f2633}{%
+           family={Rowstron},
+           familyi={R\bibinitperiod},
+           given={Antony},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fb43649db15953eb2164df87bc5034a3}{%
+           family={Druschel},
+           familyi={D\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=6d84b5e8da24c645eb6bc438af7621c4}{%
+           family={Guerraoui},
+           familyi={G\bibinitperiod},
+           given={Rachid},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{0aa0cd8b6c1befd28506136e1a6ee12b}
+      \strng{fullhash}{0aa0cd8b6c1befd28506136e1a6ee12b}
+      \strng{authornamehash}{0aa0cd8b6c1befd28506136e1a6ee12b}
+      \strng{authorfullhash}{0aa0cd8b6c1befd28506136e1a6ee12b}
+      \strng{editornamehash}{6d84b5e8da24c645eb6bc438af7621c4}
+      \strng{editorfullhash}{6d84b5e8da24c645eb6bc438af7621c4}
+      \field{sortinit}{R}
+      \field{sortinithash}{c15bc8eb6936bc6b3c8baa9e8575af53}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents the design and evaluation of Pastry, a scalable, distributed object location and routing substrate for wide-area peer-to-peer applications. Pastry performs application-level routing and object location in a potentially very large overlay network of nodes connected via the Internet. It can be used to support a variety of peer-to-peer applications, including global data storage, data sharing, group communication and naming.}
+      \field{booktitle}{Middleware 2001}
+      \field{isbn}{978-3-540-45518-9}
+      \field{title}{Pastry: Scalable, Decentralized Object Location, and Routing for Large-Scale Peer-to-Peer Systems}
+      \field{year}{2001}
+      \field{pages}{329\bibrangedash 350}
+      \range{pages}{22}
+    \endentry
+    \entry{OCBT}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=f7b4ee54ed9bb43f7556721277ad4592}{%
+           family={Shields},
+           familyi={S\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=316813bb1f99dca2dec6297694984a29}{%
+           family={Garcia-Luna-Aceves},
+           familyi={G\bibinithyphendelim L\bibinithyphendelim A\bibinitperiod},
+           given={J.\bibnamedelimi J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f5620ca857802e2250f250c5b39ee014}
+      \strng{fullhash}{f5620ca857802e2250f250c5b39ee014}
+      \strng{authornamehash}{f5620ca857802e2250f250c5b39ee014}
+      \strng{authorfullhash}{f5620ca857802e2250f250c5b39ee014}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{INFOCOM '97. Sixteenth Annual Joint Conference of the IEEE Computer and Communications Societies. Driving the Information Revolution., Proceedings IEEE}
+      \field{issn}{0743-166X}
+      \field{month}{4}
+      \field{title}{The ordered core based tree protocol}
+      \field{volume}{2}
+      \field{year}{1997}
+      \field{pages}{884\bibrangedash 891 vol.2}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1109/INFCOM.1997.644571
+      \endverb
+      \keyw{protocols;telecommunication links;telecommunication network routing;trees (mathematics);core failure;link failure;multicast routing protocol;multicast tree;ordered core based tree protocol;routing instability;simulation results;tree repair latency;Delay;Multicast protocols;Routing protocols;Scalability;Unicast}
+    \endentry
+    \entry{RFC3208}{report}{}
+      \name{author}{14}{}{%
+        {{hash=ac85528ca1c4c3fbf00c8bbbbb288bb6}{%
+           family={Speakman},
+           familyi={S\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=ba519fb49cefd66d5830a04f2742bf4f}{%
+           family={Crowcroft},
+           familyi={C\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b1af2238152f3f6726e46f7aa1123c06}{%
+           family={Gemmell},
+           familyi={G\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a96ab1e9b819dafaa1b1e2f193aedc37}{%
+           family={Farinacci},
+           familyi={F\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=81ff8063dbb0c5be3cdb7906122f78bc}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b0f3eca16a75fedf08a7754c56b963dc}{%
+           family={Leshchiner},
+           familyi={L\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c7c1ae5fe8fb33e6e2394cf00fc908e2}{%
+           family={Luby},
+           familyi={L\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9355cbddc8ffc7a19bc23074c3f7a836}{%
+           family={Montgomery},
+           familyi={M\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=9c62b29ae3870940c5892467a2c128a1}{%
+           family={Rizzo},
+           familyi={R\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=014f93be3378cd25e6d43719edd09016}{%
+           family={Tweedly},
+           familyi={T\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=780feadd06786206bc1f220228aeabb5}{%
+           family={Bhaskar},
+           familyi={B\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=1d75bc2f0216f6dd804e3070a0c89940}{%
+           family={Edmonstone},
+           familyi={E\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8969e111f8c26b76e483a372238e45f0}{%
+           family={Sumanasekera},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=b0927c0f7886edffee4f84483a32b6a0}{%
+           family={Vicisano},
+           familyi={V\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{dbfd5d0cc9c84390b52608e92cee9787}
+      \strng{fullhash}{82300129ed5f7fce59e0f14574b8d81c}
+      \strng{authornamehash}{dbfd5d0cc9c84390b52608e92cee9787}
+      \strng{authorfullhash}{82300129ed5f7fce59e0f14574b8d81c}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{12}
+      \field{note}{\url{http://www.rfc-editor.org/rfc/rfc3208.txt}}
+      \field{number}{3208}
+      \field{title}{PGM Reliable Transport Protocol Specification}
+      \field{type}{RFC}
+      \field{year}{2001}
+      \verb{url}
+      \verb http://www.rfc-editor.org/rfc/rfc3208.txt
+      \endverb
+    \endentry
+    \entry{chord}{article}{}
+      \name{author}{7}{}{%
+        {{hash=51d9ef26181e2e8a9dc546b401e0bb26}{%
+           family={Stoica},
+           familyi={S\bibinitperiod},
+           given={Ion},
+           giveni={I\bibinitperiod}}}%
+        {{hash=e72124f8c830de64524443c1beaf2d5f}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=c58f0d4c0df5fd4418f8dc40e2dd3219}{%
+           family={Liben-Nowell},
+           familyi={L\bibinithyphendelim N\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=b0f0e7f2b0854b0c950b2d61ca54d6e7}{%
+           family={Karger},
+           familyi={K\bibinitperiod},
+           given={David\bibnamedelima R.},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=c4e9f8e102c2895559ca5b01cc81e396}{%
+           family={Kaashoek},
+           familyi={K\bibinitperiod},
+           given={M.\bibnamedelimi Frans},
+           giveni={M\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=a86867a939ed2e915233f5e4d031239d}{%
+           family={Dabek},
+           familyi={D\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=ec394c5150bcaf5dac455aa9e3221f4e}{%
+           family={Balakrishnan},
+           familyi={B\bibinitperiod},
+           given={Hari},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Piscataway, NJ, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Press}%
+      }
+      \strng{namehash}{bd2165b7c7b433cd9beb49acaa68ac7c}
+      \strng{fullhash}{1b464d9bf638d34485fe471ad51e8366}
+      \strng{authornamehash}{bd2165b7c7b433cd9beb49acaa68ac7c}
+      \strng{authorfullhash}{1b464d9bf638d34485fe471ad51e8366}
+      \field{sortinit}{S}
+      \field{sortinithash}{3c1547c63380458f8ca90e40ed14b83e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1063-6692}
+      \field{journaltitle}{IEEE/ACM Trans. Netw.}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{{Chord: A Scalable Peer-to-peer Lookup Protocol for Internet Applications}}
+      \field{volume}{11}
+      \field{year}{2003}
+      \field{pages}{17\bibrangedash 32}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1109/TNET.2002.808407
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1109/TNET.2002.808407
+      \endverb
+      \keyw{distributed scalable algorithms,lookup protocols,peer-to-peer networks}
+    \endentry
+    \entry{RFC3913}{report}{}
+      \name{author}{1}{}{%
+        {{hash=e1e253ab6aed81316f51c2840aed0de8}{%
+           family={Thaler},
+           familyi={T\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{e1e253ab6aed81316f51c2840aed0de8}
+      \strng{fullhash}{e1e253ab6aed81316f51c2840aed0de8}
+      \strng{authornamehash}{e1e253ab6aed81316f51c2840aed0de8}
+      \strng{authorfullhash}{e1e253ab6aed81316f51c2840aed0de8}
+      \field{sortinit}{T}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{9}
+      \field{number}{3913}
+      \field{title}{Border Gateway Multicast Protocol (BGMP): Protocol Specification}
+      \field{type}{RFC}
+      \field{year}{2004}
+    \endentry
+    \entry{RFC1075}{report}{}
+      \name{author}{3}{}{%
+        {{hash=9b1ffd6a0bcb854c5b0ee7b85db87149}{%
+           family={Waitzman},
+           familyi={W\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6cfb9d696774a693c6689c578cec05b3}{%
+           family={Partridge},
+           familyi={P\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bc94c1fcfe2556827f2ed9e36d1aad2c}{%
+           family={Deering},
+           familyi={D\bibinitperiod},
+           given={S.E.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \strng{namehash}{61dcff633b6ee40dce20c7999c4d8b3e}
+      \strng{fullhash}{61dcff633b6ee40dce20c7999c4d8b3e}
+      \strng{authornamehash}{61dcff633b6ee40dce20c7999c4d8b3e}
+      \strng{authorfullhash}{61dcff633b6ee40dce20c7999c4d8b3e}
+      \field{sortinit}{W}
+      \field{sortinithash}{6d25b3eefe5aa2147d1f339686808918}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{11}
+      \field{number}{1075}
+      \field{title}{Distance Vector Multicast Routing Protocol}
+      \field{type}{RFC}
+      \field{year}{1988}
+    \endentry
+    \entry{kubi}{inproceedings}{}
+      \name{author}{9}{}{%
+        {{hash=ff21abf9349dcd2e548ed2f61c9f9aab}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+        {{hash=523a3a67da9d74f5f023800fae3d3ebe}{%
+           family={Mor},
+           familyi={M\bibinitperiod},
+           given={Nitesh},
+           giveni={N\bibinitperiod}}}%
+        {{hash=e2d5a4c5971f68a994a04460f6b90095}{%
+           family={Kolb},
+           familyi={K\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fedd0749308fae84879610d4acebd0a6}{%
+           family={Chan},
+           familyi={C\bibinitperiod},
+           given={Douglas\bibnamedelima S.},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=42968dd51d17520e41418805124c0137}{%
+           family={Lutz},
+           familyi={L\bibinitperiod},
+           given={Ken},
+           giveni={K\bibinitperiod}}}%
+        {{hash=12f5b7cb7026939b7536a9a65d844968}{%
+           family={Allman},
+           familyi={A\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=7c5707dcdf08e5d9523a0c85eea969ff}{%
+           family={Wawrzynek},
+           familyi={W\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=50c8f56ceae88cd2f10ba76d0fe32542}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+        {{hash=eb3352ded591687a6f8e4143987603fe}{%
+           family={Kubiatowicz},
+           familyi={K\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Santa Clara, CA}%
+      }
+      \list{publisher}{1}{%
+        {{USENIX} Association}%
+      }
+      \strng{namehash}{d6940fd309b8571c42234795064c2db0}
+      \strng{fullhash}{b88ed8f1b690c5c02377d32912de7416}
+      \strng{authornamehash}{d6940fd309b8571c42234795064c2db0}
+      \strng{authorfullhash}{b88ed8f1b690c5c02377d32912de7416}
+      \field{sortinit}{Z}
+      \field{sortinithash}{35589aa085e881766b72503e53fd4c97}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{7th {USENIX} Workshop on Hot Topics in Cloud Computing (HotCloud 15)}
+      \field{title}{{The Cloud is Not Enough: Saving IoT from the Cloud}}
+      \field{year}{2015}
+      \verb{url}
+      \verb https://www.usenix.org/conference/hotcloud15/workshop-program/presentation/zhang
+      \endverb
+    \endentry
+    \entry{tapestry}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{3}{}{%
+        {{hash=0e7a8fc98a2aff68c67bbd33651e7a3c}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Ben\bibnamedelima Yanbin},
+           giveni={B\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=eb3352ded591687a6f8e4143987603fe}{%
+           family={Kubiatowicz},
+           familyi={K\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ae2f8b8d4763beedb54eff8dd0126034}{%
+           family={Joseph},
+           familyi={J\bibinitperiod},
+           given={Anthony\bibnamedelima D},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Computer Science Division, University of California Berkeley}%
+      }
+      \strng{namehash}{b8eecc50691d173098d387c89df0f27f}
+      \strng{fullhash}{1e3da6fb4f52d87d82483389c9072d3d}
+      \strng{authornamehash}{b8eecc50691d173098d387c89df0f27f}
+      \strng{authorfullhash}{1e3da6fb4f52d87d82483389c9072d3d}
+      \field{sortinit}{Z}
+      \field{sortinithash}{35589aa085e881766b72503e53fd4c97}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Tapestry: An infrastructure for fault-tolerant wide-area location and routing}}
+      \field{year}{2001}
+    \endentry
+  \endsortlist
+  \missing{RFC1930}
+  \missing{pgm}
+\endrefsection
+\endinput
+
