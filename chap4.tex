@@ -1,6 +1,6 @@
 \chapter{Reliability in SCDTs}
 
-\section{Cached NACK Reliability}
+\section{Cached Nack Reliability}
 Just like in traditional Internet services, IoT applications have a variety of
 reliability constraints.  We propose that in a SCDT, the reliability should be
 constructed using negative acknowledgments (``nacks") from children.  Previous
@@ -11,7 +11,7 @@ Unlike these previous schemes, SCDTs utilize caching at intermediate nodes.  We
 argue that drafting intermediate routers as caches will improve scalability (by
 reducing the amount of traffic that must flow to the root) and improve partition
 tolerance (since retransmission could still occur even if the path to the root
-is lost).  We call this scheme Cached NACK Reliability (CNR).
+is lost).  We call this scheme Cached Nack Reliability (CNR).
 
 The SCDT forwards data unreliably to improve latency, but caches the data it
 forwards at each intermediate nodes.  A simple nacking scheme could use a similar method to that employed in TCP \cite{RFC0793}: by examining an incrementally increasing sequence number associated with the SCDT included with every packet.  Gaps observed in the sequence numbers of received packets indicate what data to nack.  Periodic heartbeats sent by child nodes and acknowledged by parents keep sequence numbers updated even when data isn't frequently published.  However, we argue for a more complex method: including a byte offset and packet length in the header of each packet.  This method supports refragmentation of packets at intermediate points in the network.
@@ -48,9 +48,11 @@ We utilize the same naive multicast tree building protocol used as a strawman in
 	\item The root pings the joining node to determine its round trip latency. 
 	\item If the latency is substantially shorter than its existing children (or if the root has fewer children than MAX\_FANOUT), the root adds the joining node as a direct child. If not, the root sends back a list of its children.
 	\item The joining node pings all of the children to determine which has the lowest latency.
-	\item The joining node repeats the process with the closest (determined by round trip time) child. The process is repeated until the joining node finds a parent that will accept it.  \ldots 
+	\item The joining node repeats the process with the closest (determined by round trip time) child. The process is repeated until the joining node finds a parent that will accept it.
 \end{enumerate}
 
 We build reliability into this tree in two different ways. The first is by creating TCP links between every parent and child, essentially creating a series of point-to-point TCP links. The second way is using CNR. Our results are predicated on comparing these two methods. 
+
+Using point-to-point TCP presents a number of issues in actual deployments. One is the risk of bottlenecking the entire tree due to one bad link, where a router's buffer becomes full and must drop incoming packets because it cannot push out data to one of its children fast enough. Another issue is the high computational cost of setting up TCP links, which is non-ideal if the tree is continuously shifting and re-optimizing. While we don't advocate using point-to-point TCP in multicast trees, it is a useful contrast point because it represent a fairly direct comparison to reliability in the unicast space.
 
 \subsection{Results}

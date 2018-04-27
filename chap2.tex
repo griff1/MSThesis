@@ -1,9 +1,21 @@
 \chapter{The Global Data Plane}
+We have developed Secure Content Distribution Trees in conjunction with the Global Data Plane (GDP) project. The SCDT concept is not exclusive to the GDP; however, the GDP is a case study of the applications benefited by SCDTs. We will reference the GDP throughout the remainder of this paper in order to demonstrate the broader  infrastructure SCDTs are designed to operate within.
 
 \section{GDP Architecture for the Internet of Things}
+\label{gdp-arch}
 
 
+\section{Secure Content Distribution Trees in the GDP}
+\label{gdp-scdt}
+The Global Data Plane Infrastructure and its pub/sub architecture offer a real-world case study for the application of Secure Content Distribution Trees (SCDTs), a networking protocol we will detail in the following chapters. SCDTs provide three main utilities to the GDP:
 
-\section{Multicast in the GDP}
+\begin{enumerate}  
+	\item SCDTs provide the mechanism by which data is distributed to thousands or millions of geographically-disparate subscribers securely (and reliably, if necessary).
+	\item SCDTs provide the mechanism for distributing data among durable replicas.
+	\item SCDTs support fast distribution of data to local subscribers, enabling latency-dependent applications.
+\end{enumerate}
 
+The GDP is designed to allow publishers to reach thousands or millions of subscribers. Often, the publisher and many (or all) of the subscribers are low-powered IoT devices. Those requirements necessitate a multicast scheme; a traditional client-server model is simply not scalable. Because the GDP is designed to support many different applications, it also requires reliable distribution of published data. Even ignoring reliable applications, durable replicas require reliability support.
+
+One of the major, distinctive features of the IoT in general and the GDP in particular is peer-to-peer nature of many applications. For instance, a street intersection might have many ``smart" devices that need to communicate amongst themselves with strong latency constraints (such as stop lights, street cameras, and car sensors) and with devices further away with weaker latency requirements (such as nearby intersections or a central control) in a city's traffic control system (see~\autoref{fig:architecture}). A traditional client-server model would require round trips to the cloud; one of the design goals of the GDP and SCDTs is to break out of this model to focus on supporting edge computing.
 

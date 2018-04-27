@@ -1,12 +1,19 @@
 \chapter{Wrapping Up}
 
 \section{Future Work \& Lessons Learned}
+We've shown SCDTs to be a viable networking structure for the Internet of Things. However, many of our discussed optimizations were not included in our simulations. Implementing any number of these would improve the performance of SCDTs even further. 
 
+For instance, in our simulated nacking scheme we always return data in fixed size blocks. However, fragmentation in actual networks could lead to nacks which request byte ranges that don't conform to block boundaries. For example, we might cache 100 byte blocks on the parent containing bytes 0-100, 101-200, and 201-300, but the child might nack bytes 50-150.  Currently, our simulation would respond with 0-200; an optimized implementation could return only bytes 50-150.
 
-\section{SCDTs in the Global Data Plane}
+Our simulations of tree building do not allow nodes to join at intermediate points in the network, an optimization that will ultimately be critical for scalability. Instead, our simulated nodes always join at the root.
 
+On the other hand, we have not simulated the impact of a mobile publisher. While the effect of an actively moving publisher will likely have a negative impact on the performance of the algorithm, we do not believe that this effect will be overly damaging. The performance impact of SCDT's security mechanisms was also not evaluated in these simulations, though the algorithms and techniques we selected were specifically chosen for their applicability and low-overhead in applications comparable to SCDTs.
 
+While we believe we have proved the utility of SCDTs, further work to implement SCDTs and test them in real-world deployments is certainly necessary. We hope to take many of the design principles of SCDTs and implement them in the Global Data Plane (see ~\autoref{gdp-scdt}), a rapidly developing infrastructure of the Internet of Things.
 
 \section{Conclusion}
+We have presented the design and architecture of Secure Content Distribution Trees, a networking protocol targeting the Internet of Things. We argue that existing networking protocols do not address the scale of the Internet of Things or the real-time and locality aspects of many applications. Our architecture is designed to address these dual goals above all else. Simulations indicate that SCDTs are a promising avenue for future edge networking research.
 
+We have also presented an improved multicast reliability scheme, Cached Nack Reliability. While we introduce this algorithm in the context of SCDTs, it is a viable approach to reliability for any multicast scheme, including both IP multicast and overlay multicast. 
 
+The Internet of Things presents enormous challenges and opportunities. Increasingly pushing computing systems to the edge of the network has already begun to upend the traditional networking infrastructure, which prioritized mainly-downstream traffic from a relatively small number of data centers to largely-independent terminals and devices. SCDTs can help to change that paradigm, pushing more traffic to the edge and de-emphasizing the cloud.

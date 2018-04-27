@@ -20,7 +20,7 @@ The fundamental SCDT structure is a multicast tree constructed out of an increme
 
 SCDTs rely on constructing overlay multicast trees to distribute data to
 large numbers of end-devices.  We show an example in~\autoref{fig:architecture}, a 
-``smart city"
+``smart city" \cite{smart-city}
 deployment where street cameras must coordinate with traffic lights at the same
 intersection, traffic lights of neighboring intersections, and central servers
 far away.  While~\autoref{fig:architecture} only draws a half-dozen end devices, 
@@ -28,7 +28,7 @@ the analogy holds
 for thousands of end-devices across a smart city, including all traffic lights,
 crosswalks, and public transit systems.  Building multicast trees on top of
 overlay networks has received significant study in the past \cite{overcast,
-	scribe, pgm}.  However, these protocols often have questionable scalability, require significant work at the root of the tree, require IP multicast to be running underneath, or disregard latency or security concerns.
+	scribe, RFC3208}.  However, these protocols often have questionable scalability, require significant work at the root of the tree, require IP multicast to be running underneath, or disregard latency or security concerns.
 
 Building optimal multicast trees would require unrealistic amounts of overhead
 at the scale we are considering.  Instead, SCDTs use heuristic methods.  We describe the characteristics necessary for an IoT
@@ -87,15 +87,7 @@ domains/ASes provide a natural choice for multicast points, and can help to
 service join requests and maintenance, reducing strain at higher levels of the
 SCDT.  While this might provide a single point of failure (or relatively few
 points of failure), if the border gateways of an AS fail then there is no access to the
-broader Internet anyway.  
-
-A key feature of domains is trust (or lack thereof), primarily based
-on domain ownership, so that domains can serve as the boundaries within which
-data flows relatively freely.  Organizations can then choose acceptable
-domains for their data to flow over, limiting data exposure risks.  For
-instance, in a smart-home, input device commands must be sent to devices in
-the same home, but allowing those commands to leave the smart-home risks
-leaking important information, such as when a user comes and goes.  In order to transit further, developers must either trust other domains (e.g. their ISP) or establish highly secured channels between the border gateways of trusted domains.  In many cases, ASes already fit the bill of trusted domains, so few modifications would be necessary to support SCDTs, but domains can also be much more specific, such as in the smart-home example.  
+broader Internet anyway.  See~\autoref{domains} for a discussion of the security aspects of domains.
 
 \begin{figure}[t]
 	\begin{center}
@@ -156,12 +148,25 @@ Ideally, the SCDT can perform double duty, transporting data to interested end-d
 \end{figure}
 We have designed SCDTs with a mobile publisher in mind. This means that a self-driving car or robot can reattach to the network elsewhere in the tree quickly. When the publisher rejoins the tree, routers can easily convert their previous parent connection to a child connection (since they're now receiving data from somewhere else). As the receivers continuously test their connections and migrate to better positions, the tree will eventually reform to a shape that better reflects the publisher's new position.
 
-\subsection{Encryption and Security}
+\section{Security Implications}
+\subsection{Broadcast Encryption Schemes}
 \label{encryption-security}
 
 Denial of service and amplification attacks are a major risk in SCDTs, since packets injected into the network will be rebroadcast.  SCDTs are named using a secure namespace that allows many different SCDTs to coexist; specifically, they are named using a cryptographic hash over the credentials of the creator of the tree, making trees attributable to owners and difficult to impersonate.  Subscribers must present a certificate to join the SCDT, which can be verified at the join point, limiting the ability of attackers to attempt to spam the tree or eavesdrop on traffic.  As discussed in~\autoref{adaptable-multicast}, we argue the use of trusted domains to restrict the open flow of data further reduces the risk of data exposure via side channel attacks.  Additionally, the publisher signs data sent to the tree; packets without a valid signature will not be forwarded.  
 
 To achieve confidentiality efficiently, we argue SCDTs should utilize broadcast encryption techniques.  Broadcast encryption \cite{broadcastenc} schemes, such as Subset Difference \cite{subset} or Layered Subset Difference \cite{lsd}, allow data to be efficiently encrypted and transmitted to a large number of receivers securely.  In addition, the publisher can quickly revoke access from misbehaving subscribers by transmitting a limited number of update messages.
+
+\subsection{Trust Domains}
+\label{domains}
+
+Domains are a concept introduced by the GDP. A key feature of domains is trust (or lack thereof), primarily based
+on domain ownership, so that domains can serve as the boundaries within which
+data flows relatively freely.  Organizations can then choose acceptable
+domains for their data to flow over, limiting data exposure risks. In order to transit further, developers must either trust other domains (e.g. their ISP) or establish highly secured channels between the border gateways of trusted domains. In many cases, ASes already fit the bill of trusted domains, so few modifications would be necessary to support SCDTs, but domains can also be much more specific, such as in the smart-home example. A simple example of the motivations for trust domains is a smart-home where input device commands must be sent to devices in the same home, but allowing those commands to leave the smart-home risks leaking important information, such as when a user comes and goes.  
+
+A more complicated network might involve a company's office infrastructure in one domain of trust, the company's factory in the next town in a second, and the company's ISP in a third. By grouping the underlying infrastructure into domains of trust, users can specify the flow of data in their networks, simplifying the process of securing data. This method helps to prevent side-channel attacks and other attempts to surreptitiously access encrypted data. For instance, previous research \cite{sidechannel} has shown that analyzing the encrypted traffic of MapReduce jobs can reveal substantial amounts of the supposedly-secure data.
+
+In our previous case, the company could restrict data flow based on their needs by specifying which domains they trust for which data. For example, door open/close notifications may only ever need to be routed to the on-site security staff, and could be restricted from flowing to the ISP, preventing a malicious actor outside the corporate network from learning the comings and goings of employees. The factory might enforce that commands sent to robots on the factory floor cannot flow outside the building to prevent leakage of sensitive information about the manufacturing process. However, the company may mark its ISP's domain as trustworthy for high-level analytics data to move from the factory to the company's offices. 
 
 \section{Evaluation}
 \label{scdt-eval}
