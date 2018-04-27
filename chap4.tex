@@ -39,7 +39,7 @@ packets to maintain a particular record reception rate.
 
 \section{Evaluation}
 
-We've simulated the impact of CNR using ns-3 \cite{ns3}, a discrete-event network simulator. Rather than cherry-pick topologies that, we've used BRITE \cite{brite} to generate Internet-like topologies and draw our results over the average performance of many different runs over many different topologies. We "install" our software on a random subset of these nodes to simulate an incrementally-deployed, Internet spanning network of subscribers. We believe this approach gives us superior results, which are both realistic to a real-world deployment and not dependent on a specific topology. 
+We've simulated the impact of CNR using ns-3 \cite{ns3}, a discrete-event network simulator. Rather than cherry-pick topologies, we've used BRITE \cite{brite} to generate Internet-like topologies and draw our results over the average performance of many different runs over many different topologies. We ``install" our software on a random subset of these nodes to simulate an incrementally-deployed, Internet spanning network of subscribers. We believe this approach gives us superior results, which are both realistic to a real-world deployment and not dependent on a specific topology. 
 
 We utilize the same naive multicast tree building protocol used as a strawman in~\autoref{scdt-eval} to build the underlying multicast tree for our tests. That is, the tree is constructed in five steps: 
 
