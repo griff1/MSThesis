@@ -39,20 +39,3 @@ packets to maintain a particular record reception rate.
 
 \section{Evaluation}
 
-We've simulated the impact of CNR using ns-3 \cite{ns3}, a discrete-event network simulator. Rather than cherry-pick topologies, we've used BRITE \cite{brite} to generate Internet-like topologies and draw our results over the average performance of many different runs over many different topologies. We ``install" our software on a random subset of these nodes to simulate an incrementally-deployed, Internet spanning network of subscribers. We believe this approach gives us superior results, which are both realistic to a real-world deployment and not dependent on a specific topology. 
-
-We utilize the same naive multicast tree building protocol used as a strawman in~\autoref{scdt-eval} to build the underlying multicast tree for our tests. That is, the tree is constructed in five steps: 
-
-\begin{enumerate}  
-	\item A joining node contacts the root and requests to join the tree. 
-	\item The root pings the joining node to determine its round trip latency. 
-	\item If the latency is substantially shorter than its existing children (or if the root has fewer children than MAX\_FANOUT), the root adds the joining node as a direct child. If not, the root sends back a list of its children.
-	\item The joining node pings all of the children to determine which has the lowest latency.
-	\item The joining node repeats the process with the closest (determined by round trip time) child. The process is repeated until the joining node finds a parent that will accept it.
-\end{enumerate}
-
-We build reliability into this tree in two different ways. The first is by creating TCP links between every parent and child, essentially creating a series of point-to-point TCP links. The second way is using CNR. Our results are predicated on comparing these two methods. 
-
-Using point-to-point TCP presents a number of issues in actual deployments. One is the risk of bottlenecking the entire tree due to one bad link, where a router's buffer becomes full and must drop incoming packets because it cannot push out data to one of its children fast enough. Another issue is the high computational cost of setting up TCP links, which is non-ideal if the tree is continuously shifting and re-optimizing. While we don't advocate using point-to-point TCP in multicast trees, it is a useful contrast point because it represent a fairly direct comparison to reliability in the unicast space.
-
-\subsection{Results}

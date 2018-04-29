@@ -1,0 +1,46 @@
+\chapter{Simulations}
+\label{simulations}
+Our evaluation methods are based on simulations using ns-3 \cite{ns3}, a discrete-event network simulator written in C++. ns-3 allows us to simulate the entire Internet stack, from physical links up through link, network, and transport level protocols. Developing our applications for ns-3 closely models the development process for a full implementation. We developed SCDTs and CNR at the ``application" level and ``install" them onto our simulated nodes. Our applications are written comparably to real implementations and behave similarly. Each instance of our software is separated from each other instance; just like in a real network, they can only communicate over the network using sockets. There is no overarching control program coordinating the nodes in the simulation for us or otherwise simplifying coordination and communication among nodes. The interfaces to the ns-3 library, such as our simulated sockets, closely parallel the actual C++ socket interfaces, meaning that porting application code from an ns-3 simulation into an actual implementation would not require re-architecting the code.
+
+ns-3 allows us to manually specify a network topology, including the number of nodes, the connections between them, the protocols used at each layer, and a number of parameters such as bandwidth, network delay, and packet drop rate. However, just because a given topology in ns-3 behaves as it would in the real world does not mean that the topologies selected necessarily reflect real-world deployments.
+
+To address this issue and avoid biasing our results by selecting hand-built topologies that favor our algorithms, we instead take advantage of BRITE \cite{brite} and BRITE integration in ns-3. BRITE, the Boston university Internet Topology gEnerator, is a synthetic topology generation framework \cite{gtitm, inet} designed to create topologies that closely resemble the Internet in aspects including hierarchical structure and degree distribution. Using BRITE topologies for our simulations greatly strengthens our argument that SCDTs and CNR are practical in real-world deployments.
+
+In each test run, we randomly select a subset of BRITE-generated nodes to have our software ``installed". In order to generate our results, we run our tests repeatedly in order to get results across many different BRITE-generated topologies and many different distributions of overlay-enabled routers. We then draw our results from the aggregate of this data, arguing that it is representative of an average use case of SCDTs and CNR on the Internet.
+
+\section{Simulating SCDTs}
+\label{sim-scdt}
+In order to determine the performance improvement of SCDTs, we first designed a baseline algorithm. We simulated a naive overlay multicast implementation designed around minimizing latency. It works as follows:
+
+\begin{enumerate}  
+	\item A joining node contacts the root and requests to join the tree. 
+	\item The root pings the joining node to determine its round trip latency. 
+	\item If the latency is substantially shorter than its existing children (or if the root has fewer children than \texttt{MAX\_FANOUT}), the root adds the joining node as a direct child. If not, the root sends back a list of its children.
+	\item The joining node pings all of the children to determine which has the lowest latency.
+	\item The joining node repeats the process with the closest (determined by round trip time) child. The process is repeated until the joining node finds a parent that will accept it.
+\end{enumerate}
+
+We compare our simulated SCDTs against this naive algorithm to demonstrate the potential performance improvements. The SCDT is somewhat simplified for simulation purposes. Roughly, the algorithm works as follows, assuming that \texttt{current\_parent} is initially set to the root:
+
+\begin{enumerate}
+	\item The joining node pings \texttt{current\_parent} to determine its round-trip latency.
+	\item The joining node requests a list of \texttt{current\_parent}'s children from \texttt{current\_parent}.
+	\item The joining node pings each of these children to determine latency from itself to the child.
+	\item The joining node sends a request to each child requesting the child's latency to the root.
+	\item The joining node calculates \textit{stretch} for each child as specified in~\autoref{motivation}.
+	\item The joining node selects the child with the lowest stretch. 
+	\begin{enumerate}
+	\item If stretch is less than \texttt{MAX\_STRETCH}, set this child as the \texttt{current\_parent} and repeat this process. 
+	\item If stretch is greater than \texttt{MAX\_STRETCH}, send an \texttt{ATTACH} request to \texttt{current\_parent} and end the process.
+	\end{enumerate}
+\end{enumerate}
+
+While both algorithms focus on latency, the SCDT algorithm uses stretch as its primary metric rather than pure latency. This allows the SCDT to satisfy both of its primary goals: enabling real-time latency constraints and supporting a massively scalable pub/sub tree.
+
+\section{Simulating CNR}
+\label{sim-cnr}
+We utilize the same naive multicast tree building protocol used in~\autoref{sim-scdt} to build the underlying multicast tree for our tests. This allows us to evaluate CNR independently of SCDTs.
+
+Instead, we evaluate CNR in comparison to its own baseline algorithm. Our naive reliability algorithm simply uses TCP links between every parent and child, essentially creating a series of point-to-point TCP links. Our results are predicated on comparing this naive baseline to CNR. 
+
+Using point-to-point TCP presents a number of issues in actual deployments. One is the risk of bottlenecking the entire tree due to one bad link, where a router's buffer becomes full and must drop incoming packets because it cannot push out data to one of its children fast enough. Another issue is the high computational cost of setting up TCP links, which is non-ideal if the tree is continuously shifting and re-optimizing. While we don't advocate using point-to-point TCP in multicast trees, it is a useful contrast point because it represent a fairly direct comparison to reliability in the unicast space.
