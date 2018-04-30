@@ -23,7 +23,7 @@ large numbers of end-devices.  We show an example in~\autoref{fig:architecture},
 ``smart city" \cite{smart-city}
 deployment where street cameras must coordinate with traffic lights at the same
 intersection, traffic lights of neighboring intersections, and central servers
-far away.  While~\autoref{fig:architecture} only draws a half-dozen end devices, 
+far away.  While~\autoref{fig:architecture} only shows a half-dozen end devices, 
 the analogy holds
 for thousands of end-devices across a smart city, including all traffic lights,
 crosswalks, and public transit systems.  Building multicast trees on top of
@@ -41,7 +41,7 @@ constraints.
 Unlike many other solutions, we argue for a multicast model in which the
 publisher can move in the network and reattach to the SCDT in a different
 location.  There are three key benefits to this model.  First, it allows
-publishers to be  without having to regularly rebuild the entire tree.
+publishers to be mobile without having to regularly rebuild the entire tree.
 Second, it allows nearby nodes (e.g. those with real-time constraints) to
 receive data quickly, while still allowing more distant nodes to eventually
 receive data.  Third, in the event of a break somewhere up the tree, nearby
@@ -50,7 +50,7 @@ in~\autoref{fig:architecture} a network fault which isolates the local
 intersection from the rest of
 the network should not cause interrupt service at the local intersection; instead, while
 it may reduce the effectiveness of nearby intersections which are no longer
-receiving the data, the local system can continue to function.
+receiving the data, the local system should continue to function.
 
 We also argue for a publisher/subscriber model in which there is only one
 publisher and arbitrarily many subscribers. This greatly simplifies tree
@@ -146,7 +146,7 @@ Ideally, the SCDT can perform double duty, transporting data to interested end-d
 	\vspace{-1em}
 	\label{fig:multicast-tree}
 \end{figure}
-We have designed SCDTs with a mobile publisher in mind. This means that a self-driving car or robot can reattach to the network elsewhere in the tree quickly. When the publisher rejoins the tree, routers can easily convert their previous parent connection to a child connection (since they're now receiving data from somewhere else). As the receivers continuously test their connections and migrate to better positions, the tree will eventually reform to a shape that better reflects the publisher's new position.
+We have designed SCDTs with a mobile publisher in mind. This means that a self-driving car or robot can reattach to the network elsewhere in the tree quickly. When the publisher rejoins the tree, routers can easily convert their previous parent connection to a child connection (since they're now receiving data from somewhere else). As the receivers continuously test their connections and migrate to better positions, the tree will eventually reform to a shape that better reflects the publisher's new position. The SCDT tree building protocol is extremely lightweight, allowing trees to quickly reform.
 
 \section{Security Implications}
 \subsection{Denial of Service}

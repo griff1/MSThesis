@@ -14,7 +14,7 @@ tolerance (since retransmission could still occur even if the path to the root
 is lost).  We call this scheme Cached Nack Reliability (CNR).
 
 The SCDT forwards data unreliably to improve latency, but caches the data it
-forwards at each intermediate nodes.  A simple nacking scheme could use a similar method to that employed in TCP \cite{RFC0793}: by examining an incrementally increasing sequence number associated with the SCDT included with every packet.  Gaps observed in the sequence numbers of received packets indicate what data to nack.  Periodic heartbeats sent by child nodes and acknowledged by parents keep sequence numbers updated even when data isn't frequently published.  However, we argue for a more complex method: including a byte offset and packet length in the header of each packet.  This method supports refragmentation of packets at intermediate points in the network.
+forwards at each intermediate node.  A traditional simple nacking scheme could use a similar method to that employed in TCP \cite{RFC0793}: by examining an incrementally increasing sequence number associated with the SCDT included with every packet.  Gaps observed in the sequence numbers of received packets indicate what data to nack.  Periodic heartbeats sent by child nodes and acknowledged by parents keep sequence numbers updated even when data isn't frequently published.  However, we argue for a more complex method: including a byte offset and packet length in the header of each packet.  This method supports refragmentation of packets at intermediate points in the network.
 
 Leaves can determine their reliability constraints for themselves, and send a
 nack for the missing data to their parent.  If there is a cache hit, the data is
