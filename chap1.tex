@@ -27,7 +27,7 @@ Encryption alone, however, does not preclude side-channel attacks or traffic ana
 
 \section{Related Work}
 
-Our solutions build upon the large body of academic literature and industry experience in multicast. Multicast is fundamentally a simple concept: rather than sending packets to individual destinations, the network uses intermediate routers as fanout points to reduce the strain on any one router. Unfortunately, this concept has seen limited adoption due to a number of implementation and deployment issues. There are two fundamentally different categories of multicast schemes: IP multicast and overlay multicast.
+Our solutions build upon the large body of academic literature and industry experience in multicast. Multicast is fundamentally a simple concept: rather than sending packets to individual destinations, the network uses intermediate routers as fanout points to reduce the strain on any one router. Unfortunately, this concept has seen limited adoption due to a number of implementation and deployment issues. There are two fundamentally different categories of multicast schemes: IP multicast and overlay multicast. Either can be used in a publish/subscribe system.
 
 \begin{table}
 	\begin{center}
@@ -50,6 +50,7 @@ Our solutions build upon the large body of academic literature and industry expe
 
 
 \subsection{IP Multicast}
+\label{ip-multicast}
 IP multicast is a network-level multicast concept that has been a popular research topic since at least the 1990s. Despite the uniformity implied by the name, there is no one single IP multicast protocol or technology. Rather, IP multicast instead refers to a collection of protocols. In general terms, these protocols rely on constructing forwarding tables at individual routers that map an IP multicast address to a series of next-hop routers. IP multicast addresses are specified in RFC 1112 \cite{RFC1112}; specifically addresses ranging from 224.0.0.0 to 239.255.255.255 are pointed to zero or more end-hosts.
 
 Perhaps the most common IP multicast deployment involves Protocol Independent Multicast (usually Sparse Mode) \cite{RFC2362} and Internet Group Management Protocol (IGMP) \cite{RFC4605}. Although they operate at the network level, these protocols operate above the protocols that actually construct IP forwarding tables. Therefore, they can be used in conjunction with most routing protocols, such as OSPF \cite{RFC2328}, IS-IS \cite{ISO10589}, and RIP \cite{RFC2453} - hence the ``Protocol Independent" portion of the name. 
@@ -70,6 +71,32 @@ The biggest advantage of this approach is that it eliminates the deployment prob
 One of the biggest challenges with overlay multicast is that the notion of neighboring nodes is not as intuitive as it is in IP multicast. For instance, simply routing a join request towards a rendezvous point (as PIM-SM does) does not guarantee that the packet will ever encounter a router running the overlay multicast software before reading the RP, reducing such a scheme to little better than unicast. In addition, overlay multicast is inherently less efficient than IP multicast because overlay multicast does not fully consider the underlying network the way IP multicast can.
 
 There have been a number of influential overlay multicast implementations. Scribe \cite{scribe} builds a multicast tree on top of Pastry \cite{pastry}, a Distributed Hash Table (DHT) implementation with locality properties. By routing along Pastry towards a rendezvous point, Scribe constructs a multicast tree from the union of the routes along the DHT. Overcast \cite{overcast} takes a different approach. Joining nodes will contact the root of the overcast tree and sample the connection bandwidth. The joining node then begins a series of rounds in which it will sample the current parent node's children and attach itself to the closest child that does not significantly reduce bandwidth. Narada \cite{narada} generates a connected graph among the nodes called a mesh and constructs spanning trees from there.
+
+\subsection{Publish/Subscribe Systems}
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			& \textbf{GDP} & \textbf{RabbitMQ} & \textbf{Kafka} & \textbf{ZeroMQ} \\
+			\hline
+			\textbf{Data Distribution} & Push & Push & Pull & Pull \\
+			\hline
+			\textbf{Data Structure} & Append-Only Log & Queue & Append-Only Log & Queue \\
+			\hline
+			\textbf{Data Filtering} & No & Yes & Yes & No\\
+			\hline
+			\textbf{Edge-Ready} & Yes & No & No & No \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Comparison of publish/subscribe systems.}
+\end{table}
+
+The pub/sub architecture \cite{pubsub} is a frequently used communications model for distributed applications. As the name suggests, subscribers register interest in specific events, and are notified of relevant events created by publishers. While the model is simple, there are many different implementations that favor different design constraints. Dedicated pub/sub systems include RabbitMQ, Apache Kafka, and ZeroMQ.
+
+RabbitMQ \cite{amqp, amqp-disc} and Kafka \cite{kafka} are both pub/sub infrastructures. There are several similarities, including having a similar architecture based on queues and message brokers. The biggest fundamental difference between the two is that RabbitMQ brokers push data to subscribers; in Kafka, clients must request data from the brokers. Both are primarily centrally deployed (e.g. in data centers) and are mainly scaled by increasing the number of brokers.
+
+ZeroMQ \cite{zeromq} takes a fairly different approach. When configured to use multicast, subscribers attach to the multicast tree via multicast switches; publishers send data to these multicast switches to forward through the network. These switches use Pragmatic General Multicast (PGM) \cite{RFC3208}, discussed briefly in~\autoref{ip-multicast}, to distribute data. Unfortunately, ZeroMQ inherits many of the issues associated with PGM. ZeroMQ cannot generally be deployed on top of an existing network because of its reliability on IP multicast. Publishers have no way to determine when subscribers join, fail, or reconnect. Subscribers have no ability to communicate with publishers to control the rate of messages; they must either receive published data at full speed or drop packets.
 
 \section{Motivation}
 \label{motivation}
@@ -92,5 +119,7 @@ By setting a worst case stretch value, a multicast scheme can force traffic to r
 Finally, existing multicast implementations have not paid sufficient attention to security concerns. Multicast schemes face some of the same security concerns as other applications, specifically ensuring confidentiality and authenticity of data transmitted over the network. However, the solutions that work in unicast do not apply directly to multicast. The publisher cannot negotiate a separate key for every subscriber in a system with any amount of scale.  Using a shared symmetric key for the group raises the question of how to distribute such a key to new subscribers and revoke access from other subscribers. 
 
 Encryption alone cannot prevent side-channel or traffic analysis attacks. With many organizations loathe to give up access to their data (and some prevented from doing so by law), networking schemes to restrict the flow of data have a clear use case. Existing multicast solutions (and many networking solutions in general) do not take trust of the underlying network into account in routing. While assuming the underlying network to be untrustworthy has been the traditional network security assumption, relying on end-to-end encryption solutions alone is increasingly becoming untenable.
+
+Our design of a new, edge-focused multicast is developed in conjunction with and targeted for the Global Data Plane (GDP) project, a publish/subscribe architecture for the Internet of Things (see~\autoref{gdp}). The GDP seeks to shift the publish/subscribe model to favor the edge over data centers; as such, a new multicast system fitting this model was necessary.
 
 

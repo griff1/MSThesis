@@ -1,4 +1,6 @@
 \chapter{The Global Data Plane}
+\label{gdp}
+
 We have developed Secure Content Distribution Trees in conjunction with the Global Data Plane (GDP) project. The SCDT concept is not exclusive to the GDP; however, the GDP is a case study of the applications benefited by SCDTs. We will reference the GDP throughout the remainder of this paper in order to demonstrate the broader  infrastructure SCDTs are designed to operate within.
 
 \section{GDP Architecture for the Internet of Things}
@@ -26,7 +28,7 @@ As shown in~\autoref{fig:gdp_stack}, the GDP interface provides a new
 The basic foundation of the GDP is the secure, singlewriter
 log. Logs in the GDP are lightweight, durable,
 and they support multiple simultaneous readers—either
-through random access (pull-based) or subscription (pushbased).
+through random access (pull-based) or subscription (push-based).
 Logs have no fixed location but rather are migrated
 as necessary to meet locality, privacy, or QoS needs
 of applications.
@@ -48,7 +50,7 @@ represented as a log where the owner has the sole write
 permission. This model is based on our observation that
 peripherals are physical devices in our environment. We
 assume that devices have cryptographic keys for signing
-and encryption.4 Logs are append-only; most data is readonly
+and encryption. Logs are append-only; most data is readonly
 and can be securely replicated and validated through
 cryptographic hashes.
 For each log, our current design exposes append, read
@@ -107,7 +109,7 @@ and dynamic changes to the routing topology.
 Logs are named with a 256-bit identifier which may be
 derived from a cryptographic hash of the owner’s public
 key and metadata. Following a variety of placement and
-replication policies,6
+replication policies,
 the GDP places logs within the infrastructure
 and advertises the location of these logs to the
 underlying routing layer. Such placement and replication
@@ -156,7 +158,7 @@ replay.
 Our design for the GDP is not yet bullet-proof and our
 initial implementation has not withstood the test of widescale
 deployment. Nonetheless, we believe that the
-core concepts of GDP overcome many IoT pitfalls in the following ways: the single-writer, append only
+core concepts of the GDP overcome many IoT pitfalls in the following ways: the single-writer, append only
 log models sensor data more accurately; integrity
 and authentication by design provides better privacy and
 security; the distributed nature with peer-to-peer technology
