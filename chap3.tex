@@ -1,6 +1,7 @@
 \chapter{Secure Content Distribution Trees}
 
 \section{Architecture}
+\label{architecture}
 In this section, we outline the design of SCDTs.  We make no claim that these solutions are optimal; rather, we chose these design patterns with implementation, deployment, and scalability in real-world environments in mind.
 
 The fundamental SCDT structure is a multicast tree constructed out of an incrementally deployable overlay network \cite{overlay} of routers and end-devices running SCDT software.  The goal of this tree is to support a publish/subscribe model with a single, mobile publisher and a large number of subscribers.  We argue for scalable tree-building mechanisms that can support reliable subscribers without bottlenecking the network.  Our reliability design is based on well-researched negative acknowledgment schemes, with some changes to improve scalability for large numbers of IoT devices.  Finally, we pay particular attention to securing SCDTs.
@@ -109,6 +110,22 @@ links are constructed over the physical network, the SCDT can identify router
 promotions which would increase efficiency.  The ability to promote unknown
 routers relies on the construction of trusted domains; only routers within the
 trusted domain should be eligible for promotion.
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			& \textbf{SCDT} & \textbf{Overcast} & \textbf{Scribe} \\
+			\hline
+			\textbf{Locality Metric} & Stretch & Bandwidth & Typically RTT or Hop Count \\
+			\hline
+			\textbf{Re-Optimizes Routes} & Yes & Yes & No \\
+			\hline
+			\textbf{Mobile Publisher} & Yes & No & No \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Comparison of various overlay multicast schemes.}
+\end{table}
 
 \subsection{Secure Resolution Systems}
 \label{sec-resolution-system}
@@ -172,19 +189,65 @@ In our previous case, the company could restrict data flow based on their needs 
 
 \section{Evaluation}
 \label{scdt-eval}
-\begin{table}
+
+We simulated the impact of using SCDTs to distribute data. Our tests were constructed by generating a BRITE \cite{brite} topology consisting of two connected autonomous systems, and attaching SCDT nodes at the leaves of these ASes.  See~\autoref{simulations} for more details. Link speeds are randomized to between 1 and 10 Mbps, and delays are randomized to between 1 and 50 ms.
+
+\begin{figure}[h]
 	\begin{center}
-		\begin{tabular}{|c|c|c|c|}
-			\hline
-			& \textbf{SCDT} & \textbf{Overcast} & \textbf{Scribe} \\
-			\hline
-			\textbf{Locality Metric} & Stretch & Bandwidth & Typically RTT or Hop Count \\
-			\hline
-			\textbf{Re-Optimizes Routes} & Yes & Yes & No \\
-			\hline
-			\textbf{Mobile Publisher} & Yes & No & No \\
-			\hline
-		\end{tabular}
+		\includegraphics[scale=0.6]{latency_nodes_bar.png}
+		\includegraphics[scale=0.6]{latency_nodes_scat.png}
 	\end{center}
-	\caption{Comparison of various overlay multicast schemes.}
-\end{table}
+	\vspace{-1.3em}
+	\caption{\small \itshape Impact on latency of increasing the number of subscribers in the tree, with \texttt{MAX\_STRETCH} set to 2. Left: The average latency of a single packet to subscribers over multiple runs. Right: The average latency of a single packet to subscribers, plotting individual runs and an exponential trend line.}
+	\vspace{-1em}
+	\label{fig:latency_nodes}
+\end{figure}
+
+~\autoref{fig:latency_nodes} demonstrates a test in which a packet is distributed to all SCDT subscribers and average latency is recorded. The latency subscribers encounter appears to increase linearly with the number of nodes in the tree, demonstrating the scale potential of SCDTs. However, we believe results in real-world deployments could scale even further. In our tests, nodes are randomly distributed; in reality, we would be more likely to see node clusters. In some of our tests, random distribution of nodes created a bottlenecking effect, with many nodes attaching to a single point; an intelligently constructed deployment could mitigate that issue.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.6]{latency_stretch_bar.png}
+		\includegraphics[scale=0.6]{latency_stretch_scat.png}
+	\end{center}
+	\vspace{-1.3em}
+	\caption{\small \itshape Impact on latency of increasing the \texttt{MAX\_STRETCH} parameter in the tree, with the number of subscribers fixed at 100. Left: The average latency of a single packet to subscribers over multiple runs. Right: The average latency of a single packet to subscribers, plotting individual runs and an exponential trend line.}
+	\vspace{-1em}
+	\label{fig:stretch_nodes}
+\end{figure}
+
+We also tested the stretch metric which is at the core of our algorithm. Figure~\autoref{fig:stretch_nodes}, shows the results of these tests. Based on this data, we believe the sweet spot for \texttt{MAX\_STRETCH} tends to be around two. Lower values had a tendency to severely limit node movement in the tree, resulting in nodes near the top of the tree with a large number of direct children. Our results indicate that as \texttt{MAX\_STRETCH} is increased beyond 2, latency increases at an exponential rate. Examination of some of the constructed trees indicates an excessively high \texttt{MAX\_STRETCH} leads to long, snaking trees with limited branching.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.6]{depth_stretch_bar.png}
+		\includegraphics[scale=0.6]{depth_stretch_scat.png}
+	\end{center}
+	\vspace{-1.3em}
+	\caption{\small \itshape Impact on tree depth of increasing the \texttt{MAX\_STRETCH} parameter in the tree, with the number of subscribers fixed at 100. Left: The average depth of the tree over multiple runs. Right: The average depth of the tree plotting individual runs and an exponential trend line.}
+	\vspace{-1em}
+	\label{fig:depth_stretch}
+\end{figure}
+
+The results in~\autoref{fig:stretch_nodes} are further reinforced by examining the average depth of nodes in SCDTs, show in~\autoref{fig:depth_stretch}. As expected, tree depth tends to increase exponentially with \texttt{MAX\_STRETCH}, leading to the aforementioned exponential increase in latency.
+
+Our results show that tuning the \texttt{MAX\_STRETCH} parameter for particular deployments will be critical. SCDTs, however, do allow a large degree of flexibility. The \texttt{MAX\_STRETCH} value is set at the node level, not the network level, meaning that every node could have its own individually-tailored \texttt{MAX\_STRETCH}.
+
+This is an important property for real-world deployments. \texttt{MAX\_STRETCH} could be set based on device priority; real-time applications could enforce a lower \texttt{MAX\_STRETCH} while batch processing applications could settle for a much higher \texttt{MAX\_STRETCH}.  
+
+It may also be important to tune this parameter based on where nodes (or clusters of nodes) are positioned in the network. Nodes located far from the root may counterintuitively require lower stretch values. These nodes will have a large latency when contacting the root, reducing sensitivity to placement in their local area (see~\autoref{motivation}). This effect could also be offset by introducing intermediate join points in the tree, i.e. nodes that can serve as a proxy for the root, as discussed in~\autoref{sec-resolution-system}.
+	
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.6]{through_nodes_bar.png}
+		\includegraphics[scale=0.6]{through_nodes_scat.png}
+	\end{center}
+	\vspace{-1.3em}
+	\caption{\small \itshape Impact on throughput of increasing the number of subscribers in the tree. Sampled by sending 10KB with \texttt{MAX\_STRETCH} fixed at 2. Left: The average throughput of the tree over multiple runs. Right: The average throughput of the tree plotting individual runs and an exponential trend line.}
+	\vspace{-1em}
+	\label{fig:through_nodes}
+\end{figure}
+
+Finally, we examine how SCDTs perform in terms of throughput. ~\autoref{fig:through_nodes} shows that average throughput decreases approximately linearly as the number of nodes increases. Note that these values should not be compared to the values in~\autoref{cnr-eval} directly since each test was conducted under different parameters and configurations.  
+
+Overall, SCDTs performed well in our tests. Both latency and throughput appear to scale well in our examinations. The most significant challenge is properly tuning the \texttt{MAX\_STRETCH} parameter. However, we have many improvements in mind for SCDTs, which we discuss in~\autoref{future}, which we believe will further improve SCDTs. 

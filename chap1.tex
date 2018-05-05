@@ -1,6 +1,8 @@
 \chapter{Introduction}
+\label{intro}
 
 \section{Background}
+\label{background}
 
 The Internet of Things is a computing macrotrend poised to change the way we interact with computing environments and reshape the Internet. While the push toward cloud computing has lead to increasing centralization of the Internet into a handful of data centers, the proliferation of IoT devices is pushing computation and data flows back toward the network edge.
 
@@ -97,6 +99,8 @@ The pub/sub architecture \cite{pubsub} is a frequently used communications model
 RabbitMQ \cite{amqp, amqp-disc} and Kafka \cite{kafka} are both pub/sub infrastructures. There are several similarities, including having a similar architecture based on queues and message brokers. The biggest fundamental difference between the two is that RabbitMQ brokers push data to subscribers; in Kafka, clients must request data from the brokers. Both are primarily centrally deployed (e.g. in data centers) and are mainly scaled by increasing the number of brokers.
 
 ZeroMQ \cite{zeromq} takes a fairly different approach. When configured to use multicast, subscribers attach to the multicast tree via multicast switches; publishers send data to these multicast switches to forward through the network. These switches use Pragmatic General Multicast (PGM) \cite{RFC3208}, discussed briefly in~\autoref{ip-multicast}, to distribute data. Unfortunately, ZeroMQ inherits many of the issues associated with PGM. ZeroMQ cannot generally be deployed on top of an existing network because of its reliability on IP multicast. Publishers have no way to determine when subscribers join, fail, or reconnect. Subscribers have no ability to communicate with publishers to control the rate of messages; they must either receive published data at full speed or drop packets.
+
+All three of these systems exist in data centers and are not aimed at deployment on the edge from either a scalability or security perspective. See~\autoref{gdp} for more on the edge-focused pub/sub paradigm offered by the GDP and for our arguments on the advantages of this paradigm over these existing pub/sub systems.
 
 \section{Motivation}
 \label{motivation}

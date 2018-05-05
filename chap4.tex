@@ -38,4 +38,22 @@ packets to maintain a particular record reception rate.
 
 
 \section{Evaluation}
+\label{cnr-eval}
+Preliminary simulation results for CNR are generated on a star topology with the root in the center, using the naive trees (not SCDTs) described in~\autoref{sim-cnr}. Because of the limited fanout  of our trees, we nonetheless still build meaningful multicast trees on this topology.  See~\autoref{simulations} for more information about our simulation environment.  Link speeds are randomized to between 1 and 100 Mbps, and delays are randomized to between 1 and 100 ms.
 
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.6]{cnr_bar.png}
+		\includegraphics[scale=0.6]{cnr_scat.png}
+	\end{center}
+	\vspace{-1.3em}
+	\caption{\small \itshape Impact on throughput of packet loss rate using CNR. Sampled by sending 100KB to a tree containing 50 subscribers and a \texttt{MAX\_FANOUT} of 2. The red line represents the average throughput of TCP over several runs with no packet loss.  Left: The average throughput of CNR over multiple runs. Right: The average throughput of CNR plotting individual runs and an exponential trend line.}
+	\vspace{-1em}
+	\label{fig:cnr_through}
+\end{figure}
+
+Our results are summarized in~\autoref{fig:cnr_through}. We sent 100KB of data to all the subscribing nodes in our multicast tree, and measured the throughput. We then introduced packet drops into the network, and measured the throughput of CNR when packets were randomly dropped 0.1\%, 1\%, 3\%, and 5\% of the time. The data suggests that CNR performs well in the face of fairly substantial packet loss, with fairly minor performance degradation until packet losses grow above 3\%, after which performance reductions become more substantial. 
+
+What is particularly interesting, however, is how much better CNR performed compared to hop-to-hop TCP links, even with no packet loss. Our data shows CNR generating about double the throughput of hop-to-hop TCP even when CNR is experiencing 5\% packet loss and TCP is experiencing none. While this is admittedly hardly the use case TCP was designed for, we believe this demonstrates the superiority of our approach and of nacking in multicast applications in general. We attribute the poor performance of hop-to-hop TCP to the overhead imposed by the TCP protocol and the loss of end-to-end efficiency \cite{end-to-end-args} TCP generally relies on. As discussed in~\autoref{architecture}, however, using many end-to-end TCP connections simply does not scale with the number of subscribers we are considering.
+
+We believe this result will only improve with increased scale. Our test described  in~\autoref{fig:cnr_through} consider only 50 nodes and a \texttt{MAX\_FANOUT} of 2, meaning that a packet would traverse at most 5 overlay hops to reach its destination. In a larger network (or, in some cases, in an SCDT), the number of hops would be greatly increased. In a system without caching, this would impose substantially greater round trip times. However, we did not test the effect of varying cache sizes and the impact of cache misses on CNR performance.

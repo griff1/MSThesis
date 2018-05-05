@@ -137,7 +137,7 @@ anycast \cite{indirection}). This fits nicely with our log abstraction
 and can support building interactive applications. To
 alleviate the growth of sensor data bandwidth, when multiple
 subscribers exist, multicast trees can be built on top
-of the overlay network using techniques proposed earlier \cite{cbt, tapestry} so that effective bandwidth is reduced \cite{end-system-mc} 
+of the overlay network using techniques proposed earlier \cite{cbt, tapestry} so that effective bandwidth is reduced \cite{narada} 
 (see~\autoref{fig:gdp_log}(c)).
 
 \textbf{4. Common Access API (CAAPI):} Although the singlewriter
@@ -179,6 +179,8 @@ The Global Data Plane Infrastructure and its pub/sub architecture offer a real-w
 \end{enumerate}
 
 The GDP is designed to allow publishers to reach thousands or millions of subscribers. Often, the publisher and many (or all) of the subscribers are low-powered IoT devices. Those requirements necessitate a multicast scheme; a traditional client-server model is simply not scalable. Because the GDP is designed to support many different applications, it also requires reliable distribution of published data. Even ignoring reliable applications, durable replicas require reliability support.
+
+The edge-focused nature of the GDP/SCDTs fills a need in pub/sub architectures not met by existing systems like Kafka, RabbitMQ, and ZeroMQ. All of those systems exist primarily in data centers; we have already discussed the drawbacks of this approach for the IoT in~\autoref{background}. In addition, they don't account for the large number of overlapping data flows in a network involving many edge devices communicating with each other. This is a fundamentally different constraint than a relatively small number of publishers and subscribers communicating with a data center; in traditional applications, peer-to-peer communication is less common and client-server more prominent. Using GDP/SCDTs, the pub/sub system and the routing system are combined to increase efficiency, and can be scaled together. Deploying additional GDP routers on-site would generally improve performance, while with the older pub/sub systems scaling has to be done at the data center, which individual end-users may have limited or no control over. 
 
 One of the major, distinctive features of the IoT in general and the GDP in particular is the peer-to-peer nature of many applications. For instance, a street intersection might have many ``smart" devices that need to communicate amongst themselves with strong latency constraints (such as stop lights, street cameras, and car sensors) and with devices further away with weaker latency requirements (such as nearby intersections or a central control) in a city's traffic control system (see~\autoref{fig:architecture}). A traditional client-server model would require round trips to the cloud; one of the design goals of the GDP and SCDTs is to break out of this model to focus on supporting edge computing.
 

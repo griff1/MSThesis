@@ -1,11 +1,12 @@
 \chapter{Wrapping Up}
 
 \section{Future Work \& Lessons Learned}
+\label{future}
 We've shown SCDTs to be a viable networking structure for the Internet of Things. However, many of our discussed optimizations were not included in our simulations. Implementing any number of these would improve the performance of SCDTs even further. 
 
 For instance, in our simulated nacking scheme we always return data in fixed size blocks. However, fragmentation in actual networks could lead to nacks which request byte ranges that don't conform to block boundaries. For example, we might cache 100 byte blocks on the parent containing bytes 1-100, 101-200, and 201-300, but the child might nack bytes 50-150.  Currently, our simulation would respond with 1-200; an optimized implementation could return only bytes 50-150.
 
-Our simulations of tree building do not allow nodes to join at intermediate points in the network, an optimization that will ultimately be critical for scalability. Instead, our simulated nodes always join at the root.
+Our simulations of tree building do not allow nodes to join at intermediate points in the network, an optimization that will ultimately be critical for scalability. Instead, our simulated nodes always join at the root. In addition, we do not include the re-optimization step in our simulations, which would allow nodes to shift their position in the tree after joining.
 
 We do not measure network stress in our simulations. \textit{Stress} on a given link is defined as ``the number of identical copies of a packet carried by a physical link" \cite{narada}; \textit{average stress} is the average of stresses across all physical links in the network. This metric is already established in the literature as a relevant measure of the efficiency of application-level multicast. Measuring stress requires modifying the network stack on all simulated nodes to monitor network-level traffic to observe the movement of individual packets over every link. While it is fully possible to do this, we do not include it in our simulations at this time.
 
