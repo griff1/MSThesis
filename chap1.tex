@@ -6,7 +6,7 @@
 
 The Internet of Things is a computing macrotrend poised to change the way we interact with computing environments and reshape the Internet. While the push toward cloud computing has lead to increasing centralization of the Internet into a handful of data centers, the proliferation of IoT devices is pushing computation and data flows back toward the network edge.
 
-IoT applications may be worth up to \$11 trillion by 2025. However, 40\% of this value relies on coordination between IoT systems \cite{McKinsey}. Developers face any a number of challenges in capturing this value. An effective IoT deployment cannot simply be a direct connection between every individual IoT device and a cloud data center \cite{kubi}. Round trips to the cloud are inefficient in  latency, bandwidth, and network stress, limiting scalability and imposing deployment constraints. IoT devices are often embedded, low-power devices with low duty-cycles, making ensuring reliability and durability of data at best an unnecessary energy drain and at worst a debilitating constraint. Furthermore, routing to and utilizing the cloud comes with a number of privacy and security risks.
+IoT applications may be worth up to \$11 trillion by 2025. However, 40\% of this value relies on coordination between IoT systems \cite{McKinsey}. Developers face any a number of challenges in capturing this value. An effective IoT deployment cannot simply be a direct connection between every individual IoT device and a cloud data center \cite{kubi}. Round trips to the cloud are inefficient in  latency, bandwidth, and network , limiting scalability and imposing deployment constraints. IoT devices are often embedded, low-power devices with low duty-cycles, making ensuring reliability and durability of data at best an unnecessary energy drain and at worst a debilitating constraint. Furthermore, routing to and utilizing the cloud comes with a number of privacy and security risks.
 
 \subsection{Latency, Bandwidth, and Scalability}
 In many cases, IoT devices can only realize their potential when they are able to distribute their data to thousands or millions of subscribers efficiently. For example, a temperature sensor might need to publish current temperature readings to every HVAC system in a neighborhood, or an air quality sensor might need to send pollution warnings to citizens in a wide area. 
@@ -112,13 +112,17 @@ Further, existing overlay multicast mechanisms are targeted at a non-mobile publ
 
 Devices further away are less likely to have real-time dependency on the data. This leads us to propose a shift: that an IoT multicast scheme should prioritize delivering data to local subscribers over subscribers further away. We further argue that, given the relatively small or infrequent messages published by many IoT devices (e.g. a temperature sensor publishing readings once per minute), an IoT multicast should prioritize latency over bandwidth. Of course, latency is determined not just by the route packets take but also by the stress on the network, the fanout at any individual node, and the quality of links (if the scheme is reliable, lossy links will require more retries). We argue that the metric to optimize is \textit{stretch}. Stretch is defined as:
 
-\[\frac{Optimal\: Route\: Latency}{Actual\: Route\: Latency}\]
+\[\frac{Actual\: Route\: Latency}{Optimal\: Route\: Latency}\]
 
 We measure stretch for a given node in practice using:
 
 \[\frac{(Node\: Latency\: to\: Parent) + (Parent\: Latency\: to\: Publisher)}{Node\: Latency\: to\: Publisher}\]
 
 By setting a worst case stretch value, a multicast scheme can force traffic to route through non-optimal routes in order to improve fanout and reduce stress, while simultaneously preventing long, snaking multicast trees that reduce latency.
+
+\textit{Stress} on a given link is defined as ``the number of identical copies of a packet carried by a physical link" \cite{narada}; \textit{average stress} is the average of stresses across all physical links in the network. This metric is already established in the literature as a relevant measure of the efficiency of application-level multicast.
+
+For the purpose of the remainder of this paper, we generally refer to the ``latency" of a given node as the one-way transmission time from the root of the multicast tree to the given node. One of the advantages of our simulation environment, described in~\autoref{simulations}, is that we do not have to perform clock synchronization or use round-trip times to determine latency. We are primarily interested in this particular latency because it represents the path data will generally take from the publisher to subscribers.
 
 Finally, existing multicast implementations have not paid sufficient attention to security concerns. Multicast schemes face some of the same security concerns as other applications, specifically ensuring confidentiality and authenticity of data transmitted over the network. However, the solutions that work in unicast do not apply directly to multicast. The publisher cannot negotiate a separate key for every subscriber in a system with any amount of scale.  Using a shared symmetric key for the group raises the question of how to distribute such a key to new subscribers and revoke access from other subscribers. 
 
