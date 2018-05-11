@@ -1,4 +1,5 @@
 \chapter{Secure Content Distribution Trees}
+\label{scdt}
 
 \section{Architecture}
 \label{architecture}
@@ -191,9 +192,26 @@ In our previous case, the company could restrict data flow based on their needs 
 
 \section{Evaluation}
 \label{scdt-eval}
-SCDTs primary differentiator from existing multicast schemes is the application of the stretch metric as the primary component for tree building. Trees are built by new nodes contacting the root, and then moving down the tree to the child that has the best stretch; the process continues until the joining node cannot move further down the tree without exceeding \texttt{MAX\_STRETCH}. An example of a generated overlay topology is shown in~\autoref{fig:topology}. More details can be found in~\autoref{sim-scdt}.
+SCDTs primary differentiator from existing multicast schemes is the application of the stretch metric as the primary component for tree building. Trees are built by new nodes contacting the root, and then moving down the tree to the child that has the best stretch; the process continues until the joining node cannot move further down the tree without exceeding \texttt{MAX\_STRETCH}. An example of a generated overlay topology is shown in~\autoref{fig:topology}.
 
 The goal of this metric is construct a tree that balances the need to fan out further down the tree for improve scalability with the real-time or near-real-time requirements of nearby IoT devices. Existing solutions do not take these real-time requirements into account. This solution is also more fault tolerant: partitions in the network, including losing connection to the broader Internet, will not prevent nodes on the same side of the partition as the publisher from continuing to receive content. Existing pub/sub architectures like RabbitMQ and Kafka are focused on the datacenter, and are not designed to account for device locality.
+
+The SCDT is somewhat simplified for simulation purposes. Recall that the root node is the publisher in the tree and the first node to ``join" the tree. Roughly, the simulation-version of the algorithm works as follows, assuming that \texttt{current\_parent} is initially set to the root:
+
+\begin{enumerate}
+	\item The joining node pings \texttt{current\_parent} to determine its round-trip latency.
+	\item The joining node requests a list of \texttt{current\_parent}'s children from \texttt{current\_parent}.
+	\item The joining node pings each of these children to determine latency from itself to the child.
+	\item The joining node sends a request to each child requesting the child's latency to the root.
+	\item The joining node calculates \textit{stretch} for each child as specified in~\autoref{motivation}.
+	\item The joining node selects the child with the lowest stretch. 
+	\begin{enumerate}
+		\item If stretch is less than \texttt{MAX\_STRETCH}, set this child as the \texttt{current\_parent} and repeat this process. 
+		\item If stretch is greater than \texttt{MAX\_STRETCH}, send an \texttt{ATTACH} request to \texttt{current\_parent} and end the process.
+	\end{enumerate}
+\end{enumerate}
+
+In order to generate a stable topology for our simulations, our simulated SCDTs do not implement a re-optimization step. In a full implementation, SCDT nodes would periodically repeat the above process to account for changes in the network and tree structure after they joined The SCDT algorithm uses stretch as its primary metric rather than pure latency. This allows the SCDT to satisfy both of its primary goals: enabling real-time latency constraints and supporting a massively scalable pub/sub tree.
 
 \begin{figure}[h]
 	\begin{center}
@@ -267,6 +285,6 @@ It may also be important to tune this parameter based on where nodes (or cluster
 
 Finally, we examine how SCDTs perform in terms of throughput. ~\autoref{fig:through_nodes} shows that average throughput decreases approximately linearly as the number of nodes increases. Note that these values should not be compared to the values in~\autoref{cnr-eval} directly since each test was conducted under different parameters and configurations.  
 
-We also compared SCDTs throughput performance to the naive tree building method used for evaluation in~\autoref{cnr-eval} and described in~\autoref{sim-cnr}. Due to limitations in our simulations, we did not compare these at scale. However, we did compare the naive tree building method, in which each node has a fixed fanout and chooses its children based on latency, on a simulation containing 50 nodes. Throughput comparisons were found to be fairly comparable between the naive implementation at this size.  Latency comparisons were also similar.  While further scaling of these simulations is necessary to prove the effectiveness of SCDTs, we believe these results show that the concept has great promise.
+We also compared SCDTs throughput performance a naive tree building method fully described in~\autoref{cnr-eval}. While we defer precise description of the algorithm to~\autoref{reliability}, in naive trees each node has a fixed fanout and chooses its children based on latency.  In these tests, naive trees were built on top of a BRITE topology. Due to limitations in our simulations, we did not compare these at scale. However, we did compare the naive tree building method on a simulation containing 50 nodes. Throughput comparisons were found to be fairly comparable between the naive implementation and SCDTs at this size.  Latency comparisons were also similar.  While further scaling of these simulations is necessary to prove the effectiveness of SCDTs, we believe these results show that the concept has great promise.
 
 Overall, SCDTs performed well in our tests. Both latency and throughput appear to scale well in our examinations. The most significant challenge is properly tuning the \texttt{MAX\_STRETCH} parameter. However, we have many improvements in mind for SCDTs, which we discuss in~\autoref{future}, which we believe will further improve SCDTs. 

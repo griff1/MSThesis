@@ -99,11 +99,7 @@ platforms and support a variety of storage
 policies, the GDP employs location-independent routing
 in a large, 256-bit address space. To meet the goal of
 flexible placement, controllable replication and easy migration,
-packets are routed through an overlay network
-that uses Distributed Hash Table (DHT) technology. DHT
-addresses the challenges of scalability \cite{pastry, chord, tapestry} with
-the sacrifice of an increased number of overlay hops. GDP
-optimizes latency through log migration (see~\autoref{fig:gdp_log}(d))
+packets are routed through an overlay network of routers running GDP software. GDP optimizes latency through log migration (see~\autoref{fig:gdp_log}(d))
 and dynamic changes to the routing topology.
 
 Logs are named with a 256-bit identifier which may be
@@ -137,8 +133,7 @@ anycast \cite{indirection}). This fits nicely with our log abstraction
 and can support building interactive applications. To
 alleviate the growth of sensor data bandwidth, when multiple
 subscribers exist, multicast trees can be built on top
-of the overlay network using techniques proposed earlier \cite{cbt, tapestry} so that effective bandwidth is reduced \cite{narada} 
-(see~\autoref{fig:gdp_log}(c)).
+of the overlay network.  We propose one such method in this thesis in~\autoref{scdt}.
 
 \textbf{4. Common Access API (CAAPI):} Although the singlewriter
 log abstraction shelters developers from low-level
@@ -155,13 +150,10 @@ need to replay the logs if the service fails; in this case,
 checkpointing can be employed to avoid expensive log
 replay.
 
-Our design for the GDP is not yet bullet-proof and our
-initial implementation has not withstood the test of widescale
-deployment. Nonetheless, we believe that the
-core concepts of the GDP overcome many IoT pitfalls in the following ways: the single-writer, append only
+The single-writer, append only
 log models sensor data more accurately; integrity
 and authentication by design provides better privacy and
-security; the distributed nature with peer-to-peer technology
+security; the distributed nature with multicast
 makes scalability possible; explicit separation of
 policy from mechanism enables better control on level of
 durability for end users; and finally, latency, bandwidth
